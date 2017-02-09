@@ -23,20 +23,44 @@
         </div>
     </div>
     <!-- HANDLE BARS TEMPLATE -->
-    <script id="movie-template" type="text/x-handlebars-template">
-        <div class="movie-container">
-            <img src="{{image}}">
-            <div>
-                <h2>{{title}}</h2>
-                <p>{{overview}}</p>
-                <a href="#" class="related-search-link" data-id="{{movieId}}">Search Related</a>
-                <select class="movie-rating" data-id="{{movieId}}">
-                        <option value=" ">Rate</option>
-                        <option value="delete">Delete</option>
-                    </select>
+    <script id="fc-template" type="text/x-handlebars-template">
+        <div class="fc-main-container">
+            <div class="fc-top-container">
+                <img class="fc-image" scr="#">
+                <!-- END image  -->
+                <div class="fc-title-rating-container">
+                    <div class="fc-title">
+                    </div>
+                    <!-- END fc-title -->
+                    <div class="fc-avg-rating">
+                    </div>
+                    <!-- END fc-avg-rating -->
+                </div>
+                <!-- END fc-title-rating-container -->
             </div>
-            <div class="close">X</div>
+            <!-- END fc-top-container -->
+            <div class="fc-center-container">
+                <div class="fc-desc">
+                </div>
+                <!-- END fc-desc -->
+                <div class="fc-food-items">
+                    <ul>
+                        <li>X</li>
+                        <li>X</li>
+                    </ul>
+                </div>
+                <!-- END fc-food-items -->
+            </div>
+            <!-- END fc-center-container -->
+            <div class="fc-footer-containers">
+                <button class="btn-make-rate"></button>
+                <button class="btn-see-rate"></button>
+            </div>
+
+            <div class="fc-close">X</div>
         </div>
+        <!-- END fc-main-container -->
+
     </script>
     <!-- HANDLE BARS TEMPLATE END END END -->
 
