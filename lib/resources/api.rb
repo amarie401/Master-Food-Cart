@@ -4,6 +4,7 @@ require 'yaml'
 require_relative '../models/foodcart'
 require_relative '../models/item'
 require_relative '../models/rating'
+require 'pry'
 
 database_config = ENV['DATABASE_URL']
 
@@ -28,8 +29,9 @@ post '/api/foodcart' do
 end
 
 post '/api/item' do
-  i = Item.new(foodcart_id: params[foodcart_id], name: params[:name], vegetarian: params[:vegetarian] )
+  i = Item.new(foodcart_id: params[:foodcart_id], name: params[:name], vegetarian: params[:vegetarian] )
   if i.valid?
+    p i
     i.save
     [201, i.to_json]
 
@@ -39,7 +41,7 @@ post '/api/item' do
 end
 
 post '/api/rating' do
-  r = Rating.new(foodcart_id: params[foodcart_id], score: params[:score], review: params[:review] )
+  r = Rating.new(foodcart_id: params[:foodcart_id], score: params[:score], review: params[:review] )
   if r.valid?
     r.save
     [201, r.to_json]
@@ -48,3 +50,5 @@ post '/api/rating' do
     halt 400
   end
 end
+
+# get '/api'
