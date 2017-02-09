@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Food Cart Database</title>
+    <link rel="stylesheet" href="styles/app.css">
+</head>
+<!-- body start -->
+
+<body>
+    <div class="main-container">
+        <header>
+            <h1 class="main-title">Food Carts</h1>
+            <aside class="main-form">
+                <form class="search-form" autocomplete="on">
+                    <input id="search-field" type="text" name="foodcart-name" placeholder="Search...">
+                    <input type="submit" value="Find Food Cart">
+                </form>
+            </aside>
+        </header>
+        <div class="template-container">
+            <!-- TEMPLATE goes here -->
+        </div>
+    </div>
+    <!-- HANDLE BARS TEMPLATE -->
+    <script id="fc-template" type="text/x-handlebars-template">
+        <div class="fc-main-container">
+            <div class="fc-top-container">
+                <img class="fc-image" scr="#">
+                <!-- END image  -->
+                <div class="fc-title-rating-container">
+                    <div class="fc-title">
+                    </div>
+                    <!-- END fc-title -->
+                    <div class="fc-avg-rating">
+                    </div>
+                    <!-- END fc-avg-rating -->
+                </div>
+                <!-- END fc-title-rating-container -->
+            </div>
+            <!-- END fc-top-container -->
+            <div class="fc-center-container">
+                <div class="fc-desc">
+                </div>
+                <!-- END fc-desc -->
+                <div class="fc-food-items">
+                    <ul>
+                        <li>X</li>
+                        <li>X</li>
+                    </ul>
+                </div>
+                <!-- END fc-food-items -->
+            </div>
+            <!-- END fc-center-container -->
+            <div class="fc-footer-containers">
+                <button class="btn-make-rate">Rate this food cart!</button>
+                <button class="btn-see-rate">See Ratings</button>
+            </div>
+
+            <div class="fc-close">X</div>
+        </div>
+        <!-- END fc-main-container -->
+
+    </script>
+    <!-- HANDLE BARS TEMPLATE END END END -->
+
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/handlebars-v4.0.5.js"></script>
+    <!-- main js file -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
