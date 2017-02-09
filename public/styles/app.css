@@ -174,11 +174,16 @@ body {
       .container input[type='submit']:hover {
         background: #ff6040; }
 
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin: 5px auto;
+  width: 100%; }
+
 h1 {
   font-family: 'Sansita', sans-serif;
   font-size: 30px;
   margin: 25px auto;
-  text-align: center;
   width: 100%; }
 
 h2 {
@@ -192,6 +197,92 @@ h3 {
   font-size: 18px;
   margin: 0 0 5px;
   width: 100%; }
+
+.fc-main-container {
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%; }
+
+.fc-top-container {
+  background: #f2f2f2;
+  border: 1px solid black;
+  display: flex;
+  width: 100%; }
+  .fc-top-container .fc-image {
+    background: #fff;
+    height: 200px;
+    padding: 10px;
+    width: 30%; }
+
+.fc-title-rating-container {
+  border: 1px solid black;
+  height: 200px;
+  padding: 5px;
+  width: 70%; }
+  .fc-title-rating-container .fc-title {
+    background: purple;
+    border: 1px solid black;
+    height: 100px;
+    padding: 5px;
+    width: 100%; }
+  .fc-title-rating-container .fc-avg-rating {
+    background: green;
+    border: 1px solid black;
+    height: 90px;
+    padding: 5px;
+    width: 60%; }
+
+.fc-center-container {
+  background: yellow;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 5px;
+  width: 100%; }
+  .fc-center-container .fc-desc {
+    background: violet;
+    border: 1px solid black;
+    height: 200px;
+    padding: 5px;
+    width: 69%; }
+  .fc-center-container .fc-food-items {
+    background: blue;
+    border: 1px solid black;
+    height: 200px;
+    padding: 5px;
+    width: 30%; }
+
+.fc-food-items ul li {
+  color: #fff; }
+
+.fc-footer-containers {
+  background: #ccc;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  height: 75px;
+  width: 100%; }
+
+.btn-make-rate {
+  width: 50px;
+  height: auto;
+  margin: 10px;
+  border: 2px solid black;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px; }
+
+.btn-see-rate {
+  width: 50px;
+  height: auto;
+  margin: 10px;
+  border: 2px solid black;
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 5px; }
 
 .has-spacer:after {
   background: #333;
