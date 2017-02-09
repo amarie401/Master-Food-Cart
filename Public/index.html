@@ -19,27 +19,41 @@
             </form>
         </aside>
         <div class="content">
-            <!-- TEMPLATE goes here -->
+            <!-- MAIN TEMPLATE goes here -->
+            <!-- RATINGS TEMPLATE goes here ** prepends to other template-->
         </div>
     </div>
-    <!-- HANDLE BARS TEMPLATE -->
-    <script id="movie-template" type="text/x-handlebars-template">
-        <div class="movie-container">
-            <img src="{{image}}">
-            <div>
-                <h2>{{title}}</h2>
-                <p>{{overview}}</p>
-                <a href="#" class="related-search-link" data-id="{{movieId}}">Search Related</a>
-                <select class="movie-rating" data-id="{{movieId}}">
-                        <option value=" ">Rate</option>
-                        <option value="delete">Delete</option>
-                    </select>
+    <!-- HANDLE BARS TEMPLATE ***MAIN**** -->
+    <script id="foodcart-template" type="text/x-handlebars-template">
+        <div class="main-container">
+            <div class="fc-top-container is-flex">
+                <img class="fc-logo" src="#">
+                <!-- end img -->
+                <div class="fc-title-ratings-container is-flex">
+                    <div class="fc-title">
+                    </div>
+                    <!-- end fc-title -->
+                    <div class="fc-avg-rating">
+                    </div>
+                    <!-- end fc-avg-rating -->
+                </div>
+                <!-- end fc-title-ratings-container -->
             </div>
+            <!-- end fc-top-container -->
+
             <div class="close">X</div>
         </div>
     </script>
     <!-- HANDLE BARS TEMPLATE END END END -->
 
+    <!-- HANDLE BARS TEMPLATE ***RATINGS**** -->
+    <script id="ratings-template" type="text/x-handlebars-template">
+        <div class="movie-container">
+
+            <div class="close">X</div>
+        </div>
+    </script>
+    <!-- HANDLE BARS TEMPLATE END END END -->
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
     <script src="js/vendor/handlebars-v4.0.5.js"></script>
     <!-- main js file -->
