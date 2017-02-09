@@ -140,39 +140,33 @@ body {
   font-size: 16px;
   line-height: 1.6; }
 
-.container {
-  padding: 0 25px; }
-  @media (min-width: 500px) and (max-width: 729px) {
-    .container aside {
-      float: none;
-      display: block;
-      width: 100%;
-      transition: width 0.25s ease-in-out; } }
-  @media (min-width: 730px) {
-    .container aside {
-      float: left;
-      margin-right: 15px;
-      min-width: 150px;
-      width: 30%; } }
-  .container #search-field,
-  .container input[type='submit'] {
-    display: block;
-    margin: 10px auto;
-    width: 100%; }
-    .container #search-field[type=text],
-    .container input[type='submit'][type=text] {
-      margin-top: 0; }
-  .container input {
-    border: 1px solid #999;
-    color: #333;
-    padding: 10px; }
-    .container input[type='submit'] {
-      border: 1px solid #333;
-      background: #FF5331;
-      padding: 6px;
-      transition: background 0.25s ease-in-out; }
-      .container input[type='submit']:hover {
-        background: #ff6040; }
+header {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid red; }
+  header .main-title {
+    width: 60%; }
+  header .main-form {
+    width: 40%;
+    margin-top: 25px; }
+
+#search-field,
+input[type='submit'] {
+  display: block;
+  margin: 10px auto;
+  width: 57%; }
+  #search-field[type=text],
+  input[type='submit'][type=text] {
+    margin-top: 0; }
+
+input {
+  padding: 10px;
+  border: 1px solid #999;
+  color: #333; }
+  input[type='submit'] {
+    padding: 6px; }
+  input:hover {
+    background: #b9deea; }
 
 h1 {
   font-family: 'Sansita', sans-serif;

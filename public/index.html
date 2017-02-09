@@ -10,15 +10,17 @@
 <!-- body start -->
 
 <body>
-    <div class="container">
-        <h1>Title</h1>
-        <aside>
-            <form class="search-form" autocomplete="on">
-                <input id="search-field" type="text" name="foodcart-name" placeholder="Search...">
-                <input type="submit" value="Find Food Cart">
-            </form>
-        </aside>
-        <div class="content">
+    <div class="main-container">
+        <header>
+            <h1 class="main-title">Food Carts</h1>
+            <aside class="main-form">
+                <form class="search-form" autocomplete="on">
+                    <input id="search-field" type="text" name="foodcart-name" placeholder="Search...">
+                    <input type="submit" value="Find Food Cart">
+                </form>
+            </aside>
+        </header>
+        <div class="template-container">
             <!-- TEMPLATE goes here -->
         </div>
     </div>
@@ -53,8 +55,8 @@
             </div>
             <!-- END fc-center-container -->
             <div class="fc-footer-containers">
-                <button class="btn-make-rate"></button>
-                <button class="btn-see-rate"></button>
+                <button class="btn-make-rate">Rate this food cart!</button>
+                <button class="btn-see-rate">See Ratings</button>
             </div>
 
             <div class="fc-close">X</div>

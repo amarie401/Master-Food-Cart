@@ -1,3 +1,7 @@
+//////////////////////////////////////////
+// EVERYTHING ABOVE/OUTSIDE OF TEMPLATE
+//////////////////////////////////////////
+
 
 $tablet-width: 500px;
 $desktop-width: 730px;
@@ -24,50 +28,49 @@ body {
     line-height: 1.6;
 }
 
+.main-container {
+}
 
-.container {
-    padding: 0 25px;
+header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid red;
 
-    aside {
-        @include tablet() {
-            float: none;
-            display: block;
-            width: 100%;
-            transition: width 0.25s ease-in-out;
-        }
-        @include desktop() {
-            float: left;
-            margin-right: 15px;
-            min-width: 150px;
-            width: 30%;
-        }
+    .main-title {
+        width: 60%;
     }
 
-    #search-field,
-    input[type='submit'] {
-        display: block;
-        margin: 10px auto;
-        width: 100%;
+    .main-form {
+        width: 40%;
+        margin-top: 25px;
+    }
+}
 
-        &[type=text] {
-            margin-top: 0;
-        }
+#search-field,
+input[type='submit'] {
+    display: block;
+    margin: 10px auto;
+    width: 57%;
+
+    &[type=text] {
+        margin-top: 0;
+    }
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #999;
+    color: #333;
+
+    &[type='submit'] {
+        padding: 6px;
     }
 
-    input {
-        border: 1px solid #999;
-        color: #333;
-        padding: 10px;
-
-        &[type='submit'] {
-            border: 1px solid #333;
-            background: #FF5331;
-            padding: 6px;
-            transition: background 0.25s ease-in-out;
-
-            &:hover {
-                background: lighten(#FF5331, 3%);
-            }
-        }
+    &:hover {
+        background: lighten(lightblue , 3%);
     }
+}
+
+.template-container {
+
 }
