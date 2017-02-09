@@ -1,5 +1,5 @@
 # Master-Food-Cart
 
 Feb 9th : Food Cart collaboration project
-Amiee : Shane : Jen : Joe
+Amiee : Shane : Jenn : Joe
 
