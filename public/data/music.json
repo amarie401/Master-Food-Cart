@@ -1,0 +1,33 @@
+[{
+    "name": "Amoral",
+    "image": "amoral.jpg",
+    "location": "Helsinki, Finland"
+}, {
+    "name": "Arion",
+    "image": "arion.jpg",
+    "location": "Helsinki, Finland"
+}, {
+    "name": "Before the Dawn",
+    "image": "before-the-dawn.jpg",
+    "location": "Tampere, Finland"
+}, {
+    "name": "Ghost Brigade",
+    "image": "ghost-brigade.jpg",
+    "location": "Jyväskylä, Finland"
+}, {
+    "name": "Hatesphere",
+    "image": "hatesphere.jpg",
+    "location": "Copenhagen, Denmark"
+}, {
+    "name": "Insomnium",
+    "image": "insomnium.jpg",
+    "location": "Joensuu, Sweden"
+}, {
+    "name": "Soilwork",
+    "image": "soilwork.jpg",
+    "location": "Stockholm, Sweden"
+}, {
+    "name": "Symphony X",
+    "image": "symphony-x.jpg",
+    "location": "New Jersey, USA"
+}]
