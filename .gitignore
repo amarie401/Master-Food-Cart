@@ -6,3 +6,4 @@ config/database.yml
 app.css.map
 .sass-cache
 .sass-cache/*
+/public/styles/app.css.map
