@@ -81,6 +81,7 @@
 
 			} // end build func
 		} // end of CLASS
+
 		/////////////////////////////////////
 		// FUNCTION: API CALL // SEARCH RESULTS
 		/////////////////////////////////////
@@ -93,6 +94,14 @@
 					new FoodcartDetails(response.results[0]);
 				});
 		} // end function
+
+		/////////////////////////////////////
+		// FUNCTION:
+		/////////////////////////////////////
+
+		/////////////////////////////////////
+		// FUNCTION:
+		/////////////////////////////////////
 
 		/////////////////////////////////////
 		// FUNCTION: CLEAR PAGE OF SEARCH
@@ -108,6 +117,8 @@
 		// FUNCTION: BIND EVENTS
 		/////////////////////////////////////
 		function bindEvents() {
+			///////////// ON CLICK : GET INPUT  /////////////
+			/////////////////////////////////////////////////////////
 			searchForm.addEventListener('submit', () => {
 				event.preventDefault();
 				clearContent();
@@ -118,11 +129,34 @@
 				searchForm.reset(); // clear form
 			});
 
+			///////////// ON CLICK : SEE RATING BUTTON  /////////////
+			/////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.btn-see-rate', function() {
 				// console.log('in');
-				$('.rr-container').removeClass('is-hidden'); // add fadeIn later
+				$('.rr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
-		}
+
+			///////////// ON CLICK : MAKE RATING BUTTON  /////////////
+			//////////////////////////////////////////////////////////
+			$('.template-container').on('click', '.btn-make-rate', function() {
+				// console.log('in');
+				$('.gr-container').toggleClass('is-hidden'); // add fadeIn later
+			});
+			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
+			//////////////////////////////////////////////////////////
+			$('.template-container').on('click', '.fc-close', function() {
+				$(this).parents('.fc-main-container').remove();
+				$('.gr-container').remove();
+				$('.rr-container').remove();
+			});
+			$('.template-container').on('click', '.gr-close', function() {
+				$(this).parents('.gr-container').remove();
+			});
+			$('.template-container').on('click', '.rr-close', function() {
+				$(this).parents('.rr-container').remove();
+			});
+
+		} // END BIND EVENTS
 
 
 		/////////////////////////////////////

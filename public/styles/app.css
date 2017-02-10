@@ -323,6 +323,7 @@ h3 {
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
+  position: relative;
   width: 75%; }
 
 .rr-rating {
@@ -336,6 +337,18 @@ h3 {
   margin-top: 10px;
   width: 100%; }
 
+.rr-close {
+  color: #5d4a46;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px; }
+
 .gr-container {
   margin-top: 15px;
   background: #8b847d;
@@ -344,6 +357,7 @@ h3 {
   display: flex;
   flex-flow: row nowrap;
   padding: 10px;
+  position: relative;
   width: 75%; }
 
 .gr-review {
@@ -351,6 +365,18 @@ h3 {
   height: 100px;
   margin-top: 10px;
   width: 100%; }
+
+.gr-close {
+  color: #5d4a46;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px; }
 
 .has-spacer:after {
   background: #333;

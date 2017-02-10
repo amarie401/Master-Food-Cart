@@ -71,14 +71,9 @@
             <!-- END fc-footer-container -->
         </div>
         <!-- END fc-main-container -->
-        <div class="rr-container is-hidden">
-            <div class="rr-rating">{{score}}</div>
-            <!-- END rr-rating -->
-            <div class="rr-review">{{review}}</div>
-            <!-- END rr-review -->
-        </div>
-        <!-- END rr-container -->
-        <div class="gr-container">
+        <!-- MAKE RATINGS & REVIEWS  -->
+
+        <div class="gr-container is-hidden">
             <form class="gr-form">
                 <select class="food-cart-rating" data-id="#">
                        <option value=" ">Rate</option>
@@ -92,8 +87,20 @@
                 <input id="gr-search-field" type="text" name="foodcart-name" placeholder="Enter Your Review...">
                 <input class="btn-review" type="submit" value="Add your review">
             </form>
+            <button class="gr-close">X</button>
         </div>
         <!-- END gr-container -->
+        <!-- VIEW RATINGS & REVIEWS  -->
+        <div class="rr-container is-hidden">
+            <div class="rr-rating">{{score}}</div>
+            <!-- END rr-rating -->
+            <div class="rr-review">{{review}}</div>
+            <!-- END rr-review -->
+            <button class="rr-close">X</button>
+
+        </div>
+        <!-- END rr-container -->
+
 
     </script>
     <!-- HANDLE BARS TEMPLATE END END END -->

@@ -128,7 +128,7 @@
 }
 
 ////////////////////////////////
-// RATINGS // REVIEWS CONTAINER
+// VIEW RATINGS // REVIEWS CONTAINER
 ////////////////////////////////
 
 .rr-container {
@@ -141,6 +141,7 @@
   display: flex;
   flex-flow: row wrap;
   padding: 10px;
+  position: relative;
   width: 75%;
 }
 
@@ -157,8 +158,21 @@
   width: 100%;
 }
 
+.rr-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
+}
+
 ////////////////////////////////
-// GR RATINGS // GR REVIEWS CONTAINER
+// GIVE* GR RATINGS // GR REVIEWS CONTAINER
 ////////////////////////////////
 
 .gr-container {
@@ -171,6 +185,7 @@
   display: flex;
   flex-flow: row nowrap;
   padding: 10px;
+  position: relative;
   width: 75%;
 }
 
@@ -179,4 +194,17 @@
   height: 100px;
   margin-top: 10px;
   width: 100%;
+}
+
+.gr-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
 }
