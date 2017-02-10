@@ -50,3 +50,30 @@ post '/api/rating' do
     halt 400
   end
 end
+
+# get '/api/foodcarts' do
+#   foodcarts = Foodcart.find_by_id(1)
+#   foodcarts_with_items = JSON.parse(foodcarts.to_json)
+#   foodcarts_with_items['items'] = JSON.parse(foodcarts.items.to_json)
+#
+#   foodcarts_with_items_ratings = JSON.parse(foodcarts_with_items.to_json)
+#   foodcarts_with_items_ratings['ratings'] = JSON.parse(foodcarts.ratings.to_json)
+#   foodcarts_with_items_ratings.to_json
+#
+# end
+
+get '/api/foodcarts' do
+  results = {}
+  foodcarts = Foodcart.all
+  foodcarts.each do |foodcarts|
+    foodcarts_with_items = JSON.parse(foodcarts.to_json)
+    foodcarts_with_items['items'] = JSON.parse(foodcarts.items.to_json)
+
+    foodcarts_with_items_ratings = JSON.parse(foodcarts_with_items.to_json)
+    foodcarts_with_items_ratings['ratings'] = JSON.parse(foodcarts.ratings.to_json)
+
+    results[foodcarts.id] = foodcarts_with_items_ratings
+  end
+  results.to_json
+
+end
