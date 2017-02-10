@@ -1,0 +1,125 @@
+//////////////////////////////////////////
+// EVERYTHING ABOVE/OUTSIDE OF TEMPLATE
+//////////////////////////////////////////
+
+
+$tablet-width: 500px;
+$desktop-width: 730px;
+@mixin tablet {
+     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}){
+        @content;
+    }
+}
+@mixin desktop {
+     @media (min-width: #{$desktop-width}){
+        @content;
+    }
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: $dolphin;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+button {
+  color: $kabul;
+}
+
+.main-container {
+}
+
+.template-container {
+  margin: 15px 20px;
+}
+
+header {
+  border-bottom: 5px solid $brownDerby;
+  display: flex;
+  width: 100%;
+
+    .main-title {
+      padding: 25px;
+      width: 60%;
+    }
+
+    .main-form {
+      display: flex;
+      flex-flow: row wrap;
+      margin-top: 25px;
+      width: 40%;
+
+      .search-form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+
+      }
+    }
+}
+
+.veggie { // button  ** to be removed until on click (search)
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px;
+  padding: 6px;
+  width: 70%;
+}
+
+.button-holder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-submit {
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px;
+  padding: 6px;
+  width: 43%;
+}
+
+.btn-clear {
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px;
+  padding: 6px;
+  width: 23%;
+}
+
+#search-field {
+  border: 1px solid #999;
+  color: #333;
+  margin: 10px auto;
+  padding: 6px;
+  width: 70%;
+
+    &[type=text] {
+        margin-top: 0;
+    }
+}
+
+
+
+
+////////////////////////////////////////////////
+// Make review / rating section //
+#gr-search-field {
+
+
+}
+
+input .btn-review {
+
+}
