@@ -89,7 +89,7 @@ put '/api/rating/:id' do |id|
     rating.score = params[:score]
     rating.review = params[:review]
     rating.save
-    rating.to_json
+    [200, rating.to_json]
   end
 end
 

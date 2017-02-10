@@ -6,6 +6,7 @@ gem 'thin'
 gem 'activerecord'
 gem 'pg'
 gem 'rake'
+gem 'rack'
 
 group :developement do
   gem 'shotgun'
