@@ -20,7 +20,7 @@
 	/*****************************************/
 	const FoodcartModule = function() {
 		const searchForm = document.querySelector('.search-form');
-		const apiKey = '230dad24aa940a540fb59d2c90298965'; // TEMP VARIABLE FOR TESTING **REMOVE
+		// const apiKey = '230dad24aa940a540fb59d2c90298965'; // TEMP VARIABLE FOR TESTING **REMOVE
 
 		////////////////////////////////////////////
 		// CLASS :
@@ -29,21 +29,21 @@
 
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
-				this.avgRating = foodcartObj.id;
-				this.image = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${foodcartObj.poster_path}`;
-				this.name = foodcartObj.title;
-				this.description = foodcartObj.overview;
-				/* Real API obj
+				// this.avgRating = foodcartObj.id;
+				// this.image = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${foodcartObj.poster_path}`;
+				// this.name = foodcartObj.title;
+				// this.description = foodcartObj.overview;
+				// Real API obj
 				// FOOD CART //
-					this.id = foodcartObj. ??? // NEEDS UPDATE // check real object name
-					this.name = foodcartObj.name;
-					this.description = foodcartObj.description;
-					this.image = `? url/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
-					this.averageRating = foodcartObj.averageRating;
+				this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+				this.name = foodcartObj.name;
+				this.description = foodcartObj.description;
+				this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
+				this.averageRating = foodcartObj.averageRating;
 				// FOOD ITEMS //
-					this.foodName = foodcartObj.foodName;
-					this.vegetarian = foodcartObj.vegetarian;
-				*/
+				this.foodName = foodcartObj.foodName;
+				this.vegetarian = foodcartObj.vegetarian;
+
 
 				this.build();
 				console.log('class this --> ' + this);
@@ -58,22 +58,19 @@
 				const template = Handlebars.compile(source);
 
 				const context = {
-					image: this.image,
+					// image: this.image,
+					// name: this.name,
+					// description: this.description,
+					// avgRating: this.avgRating,
+
+					// Real API context
 					name: this.name,
 					description: this.description,
-					avgRating: this.avgRating
+					image: this.image,
+					averageRating: this.averageRating,
 
-					/*
-					// Real API context
-						name: this.name,
-						description: this.description,
-						image: this.image,
-						averageRating: this.averageRating,
-
-						foodName: this.foodName,
-						vegetarian: this.vegetarian
-					*/
-
+					foodName: this.foodName,
+					vegetarian: this.vegetarian
 				};
 				const html = template(context);
 
@@ -88,7 +85,7 @@
 		function APIRequest(query) {
 			query = encodeURIComponent(query);
 
-			$.get(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${apiKey}`)
+			$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
 				.then((response) => {
 					console.log(response);
 					new FoodcartDetails(response.results[0]);
