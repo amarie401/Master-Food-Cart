@@ -11,8 +11,8 @@
 	////////////////////////////////////////////
 	// Work Flow ::::
 	// iifee ---> jq/ready ---> constr ---> init()
-	// init() --> bindEvents(getSearchInput)
-	// init() --> generateTemplate(input)
+	// init() --> bindEvents() -> searchInput
+	// init() --> CLASS: -> BUILD -> generates Template(input)
 	//
 	////////////////////////////////////////////
 	/*****************************************/
@@ -33,6 +33,18 @@
 				this.image = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${foodcartObj.poster_path}`;
 				this.name = foodcartObj.title;
 				this.description = foodcartObj.overview;
+				/* Real API obj
+				// FOOD CART //
+					this.id = foodcartObj. ??? // NEEDS UPDATE // check real object name
+					this.name = foodcartObj.name;
+					this.description = foodcartObj.description;
+					this.image = `? url/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
+					this.averageRating = foodcartObj.averageRating;
+				// FOOD ITEMS //
+					this.foodName = foodcartObj.foodName;
+					this.vegetarian = foodcartObj.vegetarian;
+				*/
+
 				this.build();
 				console.log('class this --> ' + this);
 			}
@@ -50,6 +62,17 @@
 					name: this.name,
 					description: this.description,
 					avgRating: this.avgRating
+
+					/*
+					// Real API context
+						name: this.name,
+						description: this.description,
+						image: this.image,
+						averageRating: this.averageRating,
+
+						foodName: this.foodName,
+						vegetarian: this.vegetarian
+					*/
 
 				};
 				const html = template(context);
@@ -71,6 +94,15 @@
 				});
 		} // end function
 
+		/////////////////////////////////////
+		// FUNCTION: CLEAR PAGE OF SEARCH
+		/////////////////////////////////////
+		function clearContent() {
+			// html is a get/send type
+			$('.template-container').html('');
+			$('.veggie').addClass('is-hidden');
+
+		}
 
 		/////////////////////////////////////
 		// FUNCTION: BIND EVENTS
@@ -78,9 +110,11 @@
 		function bindEvents() {
 			searchForm.addEventListener('submit', () => {
 				event.preventDefault();
+				clearContent();
 				const searchValue = event.target[0].value; //grab value from input
 				console.log(searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
+				$('.veggie').removeClass('is-hidden');
 				searchForm.reset(); // clear form
 			});
 

@@ -165,11 +165,19 @@ header {
   padding: 6px;
   width: 57%; }
 
+.btn-clear {
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px auto;
+  padding: 6px;
+  width: 49%; }
+
 #search-field,
 input[type='submit'] {
   display: block;
   margin: 10px auto;
-  width: 57%; }
+  width: 49%; }
   #search-field[type=text],
   input[type='submit'][type=text] {
     margin-top: 0; }
