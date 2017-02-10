@@ -80,11 +80,24 @@ get '/api/foodcarts' do
 
 end
 
+put '/api/rating/:id' do |id|
+  rating = Rating.find_by_id(id)
+  if rating.nil?
+    [404, 'That rating does not exist']
+  else
+    rating.foodcart_id = params[:foodcart_id]
+    rating.score = params[:score]
+    rating.review = params[:review]
+    rating.save
+    rating.to_json
+  end
+end
+
 delete '/api/rating/:id' do |id|
   rating = Rating.find_by_id(id)
   if !rating.nil?
     rating.destroy
   else
-    [404, 'that rating does not exist']
+    [404, 'That rating does not exist']
   end
 end
