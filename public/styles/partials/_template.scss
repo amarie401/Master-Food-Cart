@@ -3,52 +3,62 @@
 ////////////////////////////////
 
 .fc-main-container {
-  border: 1px solid black;
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
   display: flex;
   flex-flow: row wrap;
-  width: 100%;
+  position: relative;
+  width: 75%;
 }
 
 .fc-close {
-
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
 }
 ////////////////////////////////
 // TOP CONTAINER
 ////////////////////////////////
 .fc-top-container {
-  background: #f2f2f2;
-  border: 1px solid black;
+  // background: #f2f2f2;
   display: flex;
+  padding: 10px 10px 5px 10px;
   width: 100%;
 
   .fc-image { // logo
-    background: #fff;
+    background: $moonRaker;
     height: 200px;
-    padding: 10px;
+    margin-right: 1%;
     width: 30%;
   }
 }
 
 .fc-title-rating-container {
-  border: 1px solid black;
+  // border: 1px solid black;
   height: 200px;
-  padding: 5px;
-  width: 70%;
+  width: 69%;
 
   .fc-title {
-    background: purple;
-    border: 1px solid black;
+    background: $moonRaker;
+    // border: 1px solid black;
     height: 100px;
-    padding: 5px;
     width: 100%;
   }
 
   .fc-avg-rating {
-    background: green;
-    border: 1px solid black;
+    background: $moonRaker;
+    // border: 1px solid black;
     height: 90px;
-    padding: 5px;
-    width: 60%;
+    margin-top: 10px;
+    width: 100%;
   }
 } // end container
 ////////////////////////////////
@@ -56,36 +66,32 @@
 ////////////////////////////////
 
 .fc-center-container {
-  background: yellow;
-  border: 1px solid black;
+  // background: yellow;
+  // border: 1px solid black;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   width: 100%;
 
   .fc-desc {
-    background: violet;
-    border: 1px solid black;
+    background: $moonRaker;
+    // border: 1px solid black;
     height: 200px;
-    padding: 5px;
     width: 69%;
 
   }
   .fc-food-items {
-    background: blue;
-    border: 1px solid black;
+    background: $moonRaker;
     height: 200px;
-    padding: 5px;
     width: 30%;
 
   }
 }
 
 .fc-food-items ul { // list style ONLY
-
+  padding: 15px;
   li {
-    color: #fff;
 
   }
 }
@@ -93,8 +99,9 @@
 // FOOOTER CONTAINER
 ////////////////////////////////
 .fc-footer-containers {
-  background: #ccc;
-  border: 1px solid black;
+  // save for production
+  // display: none;
+  //
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
@@ -103,20 +110,50 @@
 }
 
 .btn-make-rate {
-  height: auto;
-  margin: 10px;
-  border: 2px solid black;
-  font-size: 20px;
+  border: 2px solid $brownDerby;
   border-radius: 5px;
-  padding: 5px;
-
+  font-size: 20px;
+  height: auto;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
 }
+
 .btn-see-rate {
   height: auto;
-  margin: 10px;
-  border: 2px solid black;
+  margin: 5px 10px 5px 10px;
+  border: 2px solid $brownDerby;
   font-size: 20px;
+  padding: 10px;
   border-radius: 5px;
-  padding: 5px;
+}
+
+////////////////////////////////
+// RATINGS // REVIEWS CONTAINER
+////////////////////////////////
+
+.rr-container {
+  //remove later
+  margin-top: 15px;
+  //
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  width: 75%;
+}
+
+.rr-rating {
+  background: $moonRaker;
+  height: 75px;
+  width: 100%;
+}
+
+.rr-review {
+  background: $moonRaker;
+  height: 100px;
+  margin-top: 10px;
+  width: 100%;
 
 }

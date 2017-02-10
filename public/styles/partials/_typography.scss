@@ -5,12 +5,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700|Sansita:400,700');
 
 p {
+  color: $kabul;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   margin: 5px auto;
   width: 100%;
 }
 
+h1, h2, h3 {
+  color: #333;
+}
 
 h1 {
     font-family: 'Sansita', sans-serif;

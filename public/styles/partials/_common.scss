@@ -23,9 +23,13 @@ $desktop-width: 730px;
 }
 
 body {
-    background: #ececec;
+    background: $dolphin;
     font-size: 16px;
     line-height: 1.6;
+}
+
+button {
+  color: $kabul;
 }
 
 .main-container {
@@ -36,18 +40,28 @@ body {
 }
 
 header {
-    display: flex;
-    width: 100%;
-    border-bottom: 1px solid red;
+  border-bottom: 5px solid $brownDerby;
+  display: flex;
+  width: 100%;
 
     .main-title {
-        width: 60%;
+      padding: 25px;
+      width: 60%;
     }
 
     .main-form {
-        width: 40%;
-        margin-top: 25px;
+      margin-top: 25px;
+      width: 40%;
     }
+}
+
+.veggie { // button  ** to be removed until on click (search)
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px auto;
+  padding: 6px;
+  width: 57%;
 }
 
 #search-field,
@@ -62,9 +76,9 @@ input[type='submit'] {
 }
 
 input {
-    padding: 10px;
     border: 1px solid #999;
     color: #333;
+    padding: 10px;
 
     &[type='submit'] {
         padding: 6px;
