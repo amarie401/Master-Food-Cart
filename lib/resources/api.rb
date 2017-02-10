@@ -64,16 +64,27 @@ end
 
 get '/api/foodcarts' do
   results = {}
+  result = {}
   foodcarts = Foodcart.all
-  foodcarts.each do |foodcarts|
-    foodcarts_with_items = JSON.parse(foodcarts.to_json)
-    foodcarts_with_items['items'] = JSON.parse(foodcarts.items.to_json)
+  foodcarts.each do |foodcart|
+    foodcart_with_items = JSON.parse(foodcart.to_json)
+    foodcart_with_items['items'] = JSON.parse(foodcart.items.to_json)
 
-    foodcarts_with_items_ratings = JSON.parse(foodcarts_with_items.to_json)
-    foodcarts_with_items_ratings['ratings'] = JSON.parse(foodcarts.ratings.to_json)
+    foodcart_with_items_ratings = JSON.parse(foodcart_with_items.to_json)
+    foodcart_with_items_ratings['ratings'] = JSON.parse(foodcart.ratings.to_json)
 
-    results[foodcarts.id] = foodcarts_with_items_ratings
+    results[foodcart.id] = foodcart_with_items_ratings
+    result = Hash[results.map{|k, v| [k.to_i, v]}]
   end
-  results.to_json
+    result.to_json
 
+end
+
+delete '/api/rating/:id' do |id|
+  rating = Rating.find_by_id(id)
+  if !rating.nil?
+    rating.destroy
+  else
+    [404, 'that rating does not exist']
+  end
 end
