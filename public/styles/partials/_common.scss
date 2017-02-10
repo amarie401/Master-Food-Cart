@@ -50,8 +50,18 @@ header {
     }
 
     .main-form {
+      display: flex;
+      flex-flow: row wrap;
       margin-top: 25px;
       width: 40%;
+
+      .search-form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+
+      }
     }
 }
 
@@ -59,44 +69,49 @@ header {
   border: 1px solid #999;
   color: #333;
   display: block;
-  margin: 10px auto;
+  margin: 10px;
   padding: 6px;
-  width: 57%;
+  width: 70%;
+}
+
+.button-holder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-submit {
+  border: 1px solid #999;
+  color: #333;
+  display: block;
+  margin: 10px;
+  padding: 6px;
+  width: 43%;
 }
 
 .btn-clear {
   border: 1px solid #999;
   color: #333;
   display: block;
-  margin: 10px auto;
+  margin: 10px;
   padding: 6px;
-  width: 49%;
+  width: 22%;
 }
 
-#search-field,
-input[type='submit'] {
-    display: block;
-    margin: 10px auto;
-    width: 49%;
+#search-field {
+  border: 1px solid #999;
+  color: #333;
+  margin: 10px auto;
+  padding: 6px;
+  width: 70%;
 
     &[type=text] {
         margin-top: 0;
     }
 }
 
-input {
-    border: 1px solid #999;
-    color: #333;
-    padding: 10px;
 
-    &[type='submit'] {
-        padding: 6px;
-    }
 
-    &:hover {
-        background: lighten(lightblue , 3%);
-    }
-}
 
 ////////////////////////////////////////////////
 // Make review / rating section //

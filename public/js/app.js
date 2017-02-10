@@ -100,7 +100,7 @@
 		function clearContent() {
 			// html is a get/send type
 			$('.template-container').html('');
-			$('.veggie').addClass('is-hidden');
+			$('.veggie').addClass('is-visibility-hidden');
 
 		}
 
@@ -114,7 +114,7 @@
 				const searchValue = event.target[0].value; //grab value from input
 				console.log(searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
-				$('.veggie').removeClass('is-hidden');
+				$('.veggie').removeClass('is-visibility-hidden');
 				searchForm.reset(); // clear form
 			});
 
