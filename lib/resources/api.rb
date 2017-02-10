@@ -20,6 +20,10 @@ after do
   ActiveRecord::Base.connection.close
 end
 
+get '/' do
+  File.read(File.join('public', 'index.html'))
+end
+
 post '/api/foodcart' do
   fc = Foodcart.new(name: params[:name], description: params[:description], image: params[:image] )
   if fc.valid?
