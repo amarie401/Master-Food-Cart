@@ -145,15 +145,15 @@
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
 			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.fc-close', function() {
-				$(this).parents('.fc-main-container').remove();
-				$('.gr-container').remove();
-				$('.rr-container').remove();
+				$(this).parents('.fc-main-container').toggleClass('is-hidden');
+				$('.gr-container, .rr-container').toggleClass('is-hidden');
 			});
 			$('.template-container').on('click', '.gr-close', function() {
-				$(this).parents('.gr-container').remove();
+				$(this).parents('.gr-container').toggleClass('is-hidden');
+
 			});
 			$('.template-container').on('click', '.rr-close', function() {
-				$(this).parents('.rr-container').remove();
+				$(this).parents('.rr-container').toggleClass('is-hidden');
 			});
 
 		} // END BIND EVENTS
