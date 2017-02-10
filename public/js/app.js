@@ -35,18 +35,18 @@
 				// this.description = foodcartObj.overview;
 				// Real API obj
 				// FOOD CART //
-				this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
-				this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
+				//this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
 				this.averageRating = foodcartObj.averageRating;
 				// FOOD ITEMS //
 				this.foodName = foodcartObj.foodName;
 				this.vegetarian = foodcartObj.vegetarian;
 
-
+				console.log('this --> ' + this);
 				this.build();
-				console.log('class this --> ' + this);
+				// console.log('class this --> ' + this);
 			}
 
 			////////////////////////////////////////////
@@ -66,9 +66,8 @@
 					// Real API context
 					name: this.name,
 					description: this.description,
-					image: this.image,
+					//	image: this.image,
 					averageRating: this.averageRating,
-
 					foodName: this.foodName,
 					vegetarian: this.vegetarian
 				};
@@ -82,20 +81,35 @@
 		/////////////////////////////////////
 		// FUNCTION: API CALL // SEARCH RESULTS
 		/////////////////////////////////////
-		function APIRequest(query) {
-			query = encodeURIComponent(query);
-
-			$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
-				.then((response) => {
-					console.log(response);
-					new FoodcartDetails(response.results[0]);
-				});
-		} // end function
+		// function APIRequest(query) {
+		// 	query = encodeURIComponent(query);
+		// 	console.log('query --> ' + query);
+		// 	$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
+		// 		.then((response) => {
+		// 			console.log(response);
+		// 			new FoodcartDetails(response.results); // [0]
+		// 		});
+		// } // end function
 
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
-
+		function APIRequest(query) {
+			query = encodeURIComponent(query);
+			$.ajax({
+				method: 'GET',
+				url: `https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`,
+				header: {
+					"content-type": "application/json;charset=utf-8"
+				}
+			}).then((response) => {
+				console.log('response results --> ' + response.results);
+				new FoodcartDetails(response.results); // [0]
+				console.log(response);
+			}).catch((error) => {
+				console.log(error);
+			});
+		}
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
@@ -120,7 +134,7 @@
 				event.preventDefault();
 				clearContent();
 				const searchValue = event.target[0].value; //grab value from input
-				console.log(searchValue);
+				console.log('input --> ' + searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
 				$('.veggie').removeClass('is-visibility-hidden');
 				searchForm.reset(); // clear form
