@@ -8,6 +8,13 @@
 	 UPDATE // PUT/PATCH - put updates full object / patch updates obj property
 	 DELETE // Delete
 	*/
+	////////////////////////////////////////////
+	// Work Flow ::::
+	// iifee ---> jq/ready ---> constr ---> init()
+	// init() --> bindEvents()
+	// init() --> generateTemplate(input)
+	//
+	////////////////////////////////////////////
 	/*****************************************/
 	/*      CONSTRUCT    */
 	/*****************************************/
