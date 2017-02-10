@@ -5,6 +5,8 @@ require_relative '../models/foodcart'
 require_relative '../models/item'
 require_relative '../models/rating'
 require 'pry'
+require 'sinatra/json'
+require_relative 'sinatra_json'
 
 database_config = ENV['DATABASE_URL']
 
@@ -51,6 +53,14 @@ post '/api/rating' do
   end
 end
 
+get '/api/foodcarts/:id' do |id|
+  foodcart = Foodcart.find_by_id(id)
+
+  halt 404 if foodcart.nil?
+
+  json foodcart
+end
+
 # get '/api/foodcarts' do
 #   foodcarts = Foodcart.find_by_id(1)
 #   foodcarts_with_items = JSON.parse(foodcarts.to_json)
@@ -63,20 +73,21 @@ end
 # end
 
 get '/api/foodcarts' do
-  results = {}
-  result = {}
-  foodcarts = Foodcart.all
-  foodcarts.each do |foodcart|
-    foodcart_with_items = JSON.parse(foodcart.to_json)
-    foodcart_with_items['items'] = JSON.parse(foodcart.items.to_json)
-
-    foodcart_with_items_ratings = JSON.parse(foodcart_with_items.to_json)
-    foodcart_with_items_ratings['ratings'] = JSON.parse(foodcart.ratings.to_json)
-
-    results[foodcart.id] = foodcart_with_items_ratings
-    result = Hash[results.map{|k, v| [k.to_i, v]}]
-  end
-    result.to_json
+  json Foodcart.all
+  # results = {}
+  # result = {}
+  # foodcarts = Foodcart.all
+  # foodcarts.each do |foodcart|
+  #   foodcart_with_items = JSON.parse(foodcart.to_json)
+  #   foodcart_with_items['items'] = JSON.parse(foodcart.items.to_json)
+  #
+  #   foodcart_with_items_ratings = JSON.parse(foodcart_with_items.to_json)
+  #   foodcart_with_items_ratings['ratings'] = JSON.parse(foodcart.ratings.to_json)
+  #
+  #   results[foodcart.id] = foodcart_with_items_ratings
+  #   result = Hash[results.map{|k, v| [k.to_i, v]}]
+  # end
+    # result.to_json
 
 end
 
