@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Food Cart Database</title>
+    <link rel="stylesheet" href="styles/app.css">
+</head>
+<!-- body start -->
+
+<body>
+    <div class="main-container">
+        <header>
+            <h1 class="main-title">Food Carts</h1>
+            <div class="main-form">
+                <form class="search-form" autocomplete="on">
+                    <input id="search-field" type="text" name="foodcart-name" placeholder="Search...">
+                    <div class="button-holder">
+                        <input class="btn-submit" type="submit" value="Find Food Cart">
+                        <button class="btn-clear">Clear results</button>
+                    </div>
+                    <button class="veggie is-visibility-hidden">Vegetarian? Click here!</button>
+                </form>
+            </div>
+        </header>
+        <div class="template-container">
+            <!-- TEMPLATE goes here -->
+
+        </div>
+        <!-- END template-container -->
+
+    </div>
+    <!-- HANDLE BARS TEMPLATE -->
+    <script id="fc-template" type="text/x-handlebars-template">
+
+        <div class="fc-main-container">
+            <button class="fc-close">X</button>
+            <div class="fc-top-container">
+                <img class="fc-image" src="{{image}}">
+                <!-- END image  -->
+                <div class="fc-title-rating-container">
+                    <div class="fc-title">{{name}}
+                    </div>
+                    <!-- END fc-title -->
+                    <div class="fc-avg-rating">{{averageRating}}
+                    </div>
+                    <!-- END fc-avg-rating -->
+                </div>
+                <!-- END fc-title-rating-container -->
+            </div>
+            <!-- END fc-top-container -->
+            <div class="fc-center-container">
+                <div class="fc-desc">{{description}}
+                </div>
+                <!-- END fc-desc -->
+                <div class="fc-food-items">
+                    <ul>
+                        <li>Food Item #1 {{foodName}}</li>
+                        <li>Food Item #2 {{foodName}}</li>
+                        <li>Food Item #3 {{foodName}}</li>
+                    </ul>
+                </div>
+                <!-- END fc-food-items -->
+            </div>
+            <!-- END fc-center-container -->
+            <div class="fc-footer-containers">
+                <button class="btn-make-rate">Rate this food cart!</button>
+                <button class="btn-see-rate">See Ratings</button>
+            </div>
+            <!-- END fc-footer-container -->
+        </div>
+        <!-- END fc-main-container -->
+        <!-- MAKE RATINGS & REVIEWS  -->
+
+        <div class="gr-container is-hidden">
+            <form class="gr-form">
+                <select class="food-cart-rating" data-id="{{id}}">
+                       <option value=" ">Rate</option>
+                       <option value="1">1</option>
+                       <option value="2">2</option>
+                       <option value="3">3</option>
+                       <option value="4">4</option>
+                       <option value="5">5</option>
+                       <option value="delete">Delete</option>
+                    </select>
+                <input id="gr-search-field" type="text" name="foodcart-name" placeholder="Enter Your Review...">
+                <input class="btn-review" type="submit" value="Add your review">
+            </form>
+            <button class="gr-close">X</button>
+        </div>
+        <!-- END gr-container -->
+        <!-- VIEW RATINGS & REVIEWS  -->
+        <div class="rr-container is-hidden">
+            <div class="rr-rating">{{score}}</div>
+            <!-- END rr-rating -->
+            <div class="rr-review">{{review}}</div>
+            <!-- END rr-review -->
+            <button class="rr-close">X</button>
+
+        </div>
+        <!-- END rr-container -->
+
+
+    </script>
+    <!-- HANDLE BARS TEMPLATE END END END -->
+
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/handlebars-v4.0.5.js"></script>
+    <!-- main js file -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

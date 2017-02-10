@@ -1,0 +1,210 @@
+////////////////////////////////
+// TEMPLATE
+////////////////////////////////
+
+.fc-main-container {
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%;
+}
+
+.fc-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
+}
+////////////////////////////////
+// TOP CONTAINER
+////////////////////////////////
+.fc-top-container {
+  // background: #f2f2f2;
+  display: flex;
+  padding: 10px 10px 5px 10px;
+  width: 100%;
+
+  .fc-image { // logo
+    background: $moonRaker;
+    height: 200px;
+    margin-right: 1%;
+    width: 30%;
+  }
+}
+
+.fc-title-rating-container {
+  // border: 1px solid black;
+  height: 200px;
+  width: 69%;
+
+  .fc-title {
+    background: $moonRaker;
+    // border: 1px solid black;
+    height: 100px;
+    width: 100%;
+  }
+
+  .fc-avg-rating {
+    background: $moonRaker;
+    // border: 1px solid black;
+    height: 90px;
+    margin-top: 10px;
+    width: 100%;
+  }
+} // end container
+////////////////////////////////
+// CENTER CONTAINER
+////////////////////////////////
+
+.fc-center-container {
+  // background: yellow;
+  // border: 1px solid black;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+
+  .fc-desc {
+    background: $moonRaker;
+    // border: 1px solid black;
+    height: 200px;
+    width: 69%;
+
+  }
+  .fc-food-items {
+    background: $moonRaker;
+    height: 200px;
+    width: 30%;
+
+  }
+}
+
+.fc-food-items ul { // list style ONLY
+  padding: 15px;
+  li {
+
+  }
+}
+////////////////////////////////
+// FOOOTER CONTAINER
+////////////////////////////////
+.fc-footer-containers {
+  // save for production
+  // display: none;
+  //
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  height: 75px;
+  width: 100%;
+}
+
+.btn-make-rate {
+  border: 2px solid $brownDerby;
+  border-radius: 5px;
+  font-size: 20px;
+  height: auto;
+  margin: 5px 10px 5px 10px;
+  padding: 10px;
+}
+
+.btn-see-rate {
+  height: auto;
+  margin: 5px 10px 5px 10px;
+  border: 2px solid $brownDerby;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+////////////////////////////////
+// VIEW RATINGS // REVIEWS CONTAINER
+////////////////////////////////
+
+.rr-container {
+  //remove later
+  margin-top: 15px;
+  //
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  position: relative;
+  width: 75%;
+}
+
+.rr-rating {
+  background: $moonRaker;
+  height: 75px;
+  width: 100%;
+}
+
+.rr-review {
+  background: $moonRaker;
+  height: 100px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.rr-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
+}
+
+////////////////////////////////
+// GIVE* GR RATINGS // GR REVIEWS CONTAINER
+////////////////////////////////
+
+.gr-container {
+  //remove later
+  margin-top: 15px;
+  //
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px;
+  position: relative;
+  width: 75%;
+}
+
+.gr-review {
+  background: $moonRaker;
+  height: 100px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.gr-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
+}
