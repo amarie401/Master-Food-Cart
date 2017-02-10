@@ -50,5 +50,3 @@ post '/api/rating' do
     halt 400
   end
 end
-
-# get '/api'
