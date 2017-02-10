@@ -61,34 +61,14 @@ get '/api/foodcarts/:id' do |id|
   json foodcart
 end
 
-# get '/api/foodcarts' do
-#   foodcarts = Foodcart.find_by_id(1)
-#   foodcarts_with_items = JSON.parse(foodcarts.to_json)
-#   foodcarts_with_items['items'] = JSON.parse(foodcarts.items.to_json)
-#
-#   foodcarts_with_items_ratings = JSON.parse(foodcarts_with_items.to_json)
-#   foodcarts_with_items_ratings['ratings'] = JSON.parse(foodcarts.ratings.to_json)
-#   foodcarts_with_items_ratings.to_json
-#
-# end
-
 get '/api/foodcarts' do
-  json Foodcart.all
-  # results = {}
-  # result = {}
-  # foodcarts = Foodcart.all
-  # foodcarts.each do |foodcart|
-  #   foodcart_with_items = JSON.parse(foodcart.to_json)
-  #   foodcart_with_items['items'] = JSON.parse(foodcart.items.to_json)
-  #
-  #   foodcart_with_items_ratings = JSON.parse(foodcart_with_items.to_json)
-  #   foodcart_with_items_ratings['ratings'] = JSON.parse(foodcart.ratings.to_json)
-  #
-  #   results[foodcart.id] = foodcart_with_items_ratings
-  #   result = Hash[results.map{|k, v| [k.to_i, v]}]
-  # end
-    # result.to_json
+  foodcarts = Foodcart.all.order(:name)
 
+  query = params[:query]
+
+  foodcarts = foodcarts.where("description ILIKE ? or name ILIKE ?", "%#{query}%", "%#{query}%") if query.present?
+
+  json foodcarts
 end
 
 put '/api/rating/:id' do |id|
