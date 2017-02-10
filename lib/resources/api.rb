@@ -29,7 +29,7 @@ post '/api/foodcart' do
 end
 
 post '/api/item' do
-  i = Item.new(foodcart_id: params[:foodcart_id], name: params[:name], vegetarian: params[:vegetarian] )
+  i = Item.new(foodcart_id: params[:foodcart_id], food_name: params[:food_name], vegetarian: params[:vegetarian] )
   if i.valid?
     p i
     i.save
