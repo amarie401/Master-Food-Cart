@@ -16,7 +16,7 @@ namespace :db do
     end
 
     ActiveRecord::Base.establish_connection(connection_details)
-    ActiveRecord::Migrator.migrate("db/migrate")
+    ActiveRecord::Migrator.migrate('db/migrate')
   end
 
   desc "Create the db"
