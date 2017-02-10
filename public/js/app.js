@@ -103,8 +103,10 @@
 					"content-type": "application/json;charset=utf-8"
 				}
 			}).then((response) => {
+				console.log('response TEST --> ' + response);
+
 				console.log('response results --> ' + response.results);
-				new FoodcartDetails(response.results); // [0]
+				new FoodcartDetails(response); // [0]
 				console.log(response);
 			}).catch((error) => {
 				console.log(error);
