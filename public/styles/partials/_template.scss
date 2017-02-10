@@ -155,5 +155,28 @@
   height: 100px;
   margin-top: 10px;
   width: 100%;
+}
 
+////////////////////////////////
+// GR RATINGS // GR REVIEWS CONTAINER
+////////////////////////////////
+
+.gr-container {
+  //remove later
+  margin-top: 15px;
+  //
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px;
+  width: 75%;
+}
+
+.gr-review {
+  background: $moonRaker;
+  height: 100px;
+  margin-top: 10px;
+  width: 100%;
 }

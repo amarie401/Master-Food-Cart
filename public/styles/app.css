@@ -317,6 +317,22 @@ h3 {
   margin-top: 10px;
   width: 100%; }
 
+.gr-container {
+  margin-top: 15px;
+  background: #8b847d;
+  border: 6px solid #4d3118;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 10px;
+  width: 75%; }
+
+.gr-review {
+  background: #c7d4f4;
+  height: 100px;
+  margin-top: 10px;
+  width: 100%; }
+
 .has-spacer:after {
   background: #333;
   content: '';
