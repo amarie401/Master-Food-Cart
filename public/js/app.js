@@ -20,6 +20,7 @@
 	/*****************************************/
 	const FoodcartModule = function() {
 		const searchForm = document.querySelector('.search-form');
+		const foodcartForm = document.querySelector('.build-foodcart-container-form');
 		////////////////////////////////////////////
 		// CLASS :
 		////////////////////////////////////////////
@@ -30,7 +31,7 @@
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
-				this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
+				this.image = foodcartObj.image;
 				this.average_rating = foodcartObj.average_rating;
 				this.food_name = foodcartObj.items.food_name;
 				this.vegetarian = foodcartObj.items.vegetarian;
@@ -81,7 +82,7 @@
 		// } // end function
 
 		/////////////////////////////////////
-		// FUNCTION:
+		// FUNCTION:  API CALL // SEARCH RESULTS
 		/////////////////////////////////////
 		function APIRequest(query) {
 			query = encodeURIComponent(query);
@@ -183,9 +184,23 @@
 
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
 			/////////////////////////////////////////////////////////
-			$('.build-cart').on('click', function() {
-				$('.build-foodcart-container', '.build-foodcart-container-form').toggleClass('is-hidden');
-			}); // *** NEED TO FIX ***
+			foodcartForm.addEventListener('submit', () => {
+				event.preventDefault();
+				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
+				foodcartForm.reset(); // clear form
+			});
+
+			$('.build-cart-btn').on('click', function() {
+				$('.build-foodcart-container-form').toggleClass('is-visibility-hidden');
+				$('.template-container').toggleClass('is-hidden'); // * may need to change, but works for now*
+			});
+
+			///////////// ON CLICK : CLOSE BUILD CONTAINER  /////////////
+			//////////////////////////////////////////////////////////
+
+			$('.build-fc-close').on('click', function() {
+				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
+			});
 
 		} // END BIND EVENTS
 
