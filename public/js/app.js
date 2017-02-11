@@ -34,8 +34,8 @@
 				this.description = foodcartObj.description;
 				//this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
 				this.averageRating = foodcartObj.averageRating;
-				this.foodName = foodcartObj.foodName;
-				this.vegetarian = foodcartObj.vegetarian;
+				this.foodName = foodcartObj.items.foodName;
+				this.vegetarian = foodcartObj.items.vegetarian;
 
 				console.log('CLASS : this --> ', this);
 				this.build();
