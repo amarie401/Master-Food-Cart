@@ -76,6 +76,11 @@
 					console.log('response TEST --> ', response);
 					console.log('response 0 TEST --> ', response[0]);
 					console.log('response 1 TEST --> ', response[1]);
+					console.log('response 2 TEST --> ', response[2]);
+					console.log('response 3 TEST --> ', response[3]);
+					console.log('response 4 TEST --> ', response[4]);
+					console.log('response 5 TEST --> ', response[5]);
+					console.log('response 6 TEST --> ', response[6]);
 					new FoodcartDetails(response); // [0]
 					console.log('new FoodcartDetails response --> ', response);
 				});
