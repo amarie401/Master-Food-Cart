@@ -68,39 +68,42 @@
 		/////////////////////////////////////
 		// FUNCTION: API CALL // SEARCH RESULTS
 		/////////////////////////////////////
-		// function APIRequest(query) {
-		// 	query = encodeURIComponent(query);
-		// 	console.log('query --> ' + query);
-		// 	$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
-		// 		.then((response) => {
-		// 			console.log(response);
-		// 			new FoodcartDetails(response.results); // [0]
-		// 		});
-		// } // end function
+		function APIRequest(query) {
+			query = encodeURIComponent(query);
+			console.log('query --> ' + query);
+			$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
+				.then((response) => {
+					console.log('response TEST --> ', response);
+					console.log('response 0 TEST --> ', response[0]);
+					console.log('response 1 TEST --> ', response[1]);
+					new FoodcartDetails(response); // [0]
+					console.log('new FoodcartDetails response --> ', response);
+				});
+		} // end function
 
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
-		function APIRequest(query) {
-			query = encodeURIComponent(query);
-			$.ajax({
-				method: 'GET',
-				url: `https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`,
-				header: {
-					"content-type": "application/json;charset=utf-8"
-				}
-			}).then((response) => {
-				console.log('response TEST --> ', response);
-				console.log('response 1 TEST --> ', response[1]);
-
-
-				console.log('response results --> ', response.results);
-				new FoodcartDetails(response); // [0]
-				console.log('new FoodcartDetails response --> ', response);
-			}).catch((error) => {
-				console.log(error);
-			});
-		}
+		// function APIRequest(query) {
+		// 	query = encodeURIComponent(query);
+		// 	$.ajax({
+		// 		method: 'GET',
+		// 		url: `https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`,
+		// 		header: {
+		// 			"content-type": "application/json;charset=utf-8"
+		// 		}
+		// 	}).then((response) => {
+		// 		console.log('response TEST --> ', response);
+		// 		console.log('response 1 TEST --> ', response[1]);
+		//
+		//
+		// 		console.log('response results --> ', response.results);
+		// 		new FoodcartDetails(response); // [0]
+		// 		console.log('new FoodcartDetails response --> ', response);
+		// 	}).catch((error) => {
+		// 		console.log(error);
+		// 	});
+		// }
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
