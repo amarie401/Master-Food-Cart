@@ -202,6 +202,59 @@ header {
   #search-field[type=text] {
     margin-top: 0; }
 
+.build-foodcart-container-form {
+  background: #8b847d;
+  border: 6px solid #4d3118;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%; }
+
+.build-foodcart-container {
+  background: #8b847d;
+  border: 6px solid #4d3118;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%; }
+
+.build-fc-close {
+  color: #5d4a46;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px; }
+
+.build-fc-top-container {
+  display: flex;
+  padding: 10px 10px 5px 10px;
+  width: 100%; }
+  .build-fc-top-container .build-fc-image {
+    background: #c7d4f4;
+    height: 200px;
+    margin-right: 1%;
+    width: 30%; }
+
+.build-fc-title-container {
+  height: 200px;
+  width: 69%; }
+  .build-fc-title-container .build-fc-title {
+    background: #c7d4f4;
+    height: 100px;
+    width: 100%; }
+  .build-fc-title-container .build-fc-description {
+    background: #c7d4f4;
+    height: 90px;
+    margin-top: 10px;
+    width: 100%; }
+
 p {
   color: #5d4a46;
   font-family: 'Roboto', sans-serif;

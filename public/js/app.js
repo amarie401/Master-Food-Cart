@@ -166,6 +166,12 @@
 				$(this).parents('.rr-container').toggleClass('is-hidden');
 			});
 
+			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
+			/////////////////////////////////////////////////////////
+			// $('.build-cart').on('click', function() {
+			// 	('.build-foodcart-container').removeClass('is-visibility-hidden');
+			// }); // *** NEED TO FIX ***
+
 		} // END BIND EVENTS
 
 

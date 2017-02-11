@@ -123,3 +123,74 @@ header {
 input .btn-review {
 
 }
+
+////////////////////////////////////////////////
+// Build a food cart //
+
+.build-foodcart-container-form {
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%;
+}
+
+.build-foodcart-container {
+  background: $schooner;
+  border: 6px solid $brownDerby;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  width: 75%;
+}
+
+.build-fc-close {
+  color: $kabul;
+  font-weight: 800;
+  display: flex;
+  color: #5d4a46;
+  position: absolute;
+  top: -5px;
+  background: transparent;
+  right: -5px;
+  border: 0;
+  font-size: 21px;
+}
+
+.build-fc-top-container {
+  // background: #f2f2f2;
+  display: flex;
+  padding: 10px 10px 5px 10px;
+  width: 100%;
+
+  .build-fc-image { // logo
+    background: $moonRaker;
+    height: 200px;
+    margin-right: 1%;
+    width: 30%;
+  }
+}
+
+.build-fc-title-container {
+  // border: 1px solid black;
+  height: 200px;
+  width: 69%;
+
+  .build-fc-title {
+    background: $moonRaker;
+    // border: 1px solid black;
+    height: 100px;
+    width: 100%;
+  }
+
+  .build-fc-description {
+    background: $moonRaker;
+    // border: 1px solid black;
+    height: 90px;
+    margin-top: 10px;
+    width: 100%;
+  }
+} // end container
