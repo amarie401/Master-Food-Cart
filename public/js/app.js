@@ -30,7 +30,7 @@
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
-				//this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
+				this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
 				this.average_rating = foodcartObj.average_rating;
 				this.food_name = foodcartObj.items.food_name;
 				this.vegetarian = foodcartObj.items.vegetarian;
@@ -47,7 +47,7 @@
 				const context = {
 					name: this.name,
 					description: this.description,
-					//	image: this.image,
+					image: this.image,
 					average_rating: this.average_rating,
 					food_name: this.food_name,
 					vegetarian: this.vegetarian
