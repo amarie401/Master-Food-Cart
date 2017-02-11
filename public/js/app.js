@@ -112,6 +112,23 @@
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
+		function buildAFoodCart() {
+			// const settings = {
+			// 	method: 'POST',
+			// 	url: `https://api.themoviedb.org/3/movie/${movie}/rating?api_key=${apiKey}&session_id=${sessionId}`,
+			// 	headers: {
+			// 		"content-type": "application/json;charset=utf-8"
+			// 	},
+			// 	data: JSON.stringify({
+			// 		"value": rating
+			// 	})
+			// };
+			// $.ajax(settings).then((response) => {
+			// 	console.log('we made it!');
+			// }).catch((error) => {
+			// 	console.log('error in ajax ' + error);
+			// });
+		}
 
 		/////////////////////////////////////
 		// FUNCTION: CLEAR PAGE OF SEARCH
