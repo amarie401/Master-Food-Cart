@@ -20,8 +20,6 @@
 	/*****************************************/
 	const FoodcartModule = function() {
 		const searchForm = document.querySelector('.search-form');
-		// const apiKey = '230dad24aa940a540fb59d2c90298965'; // TEMP VARIABLE FOR TESTING **REMOVE
-
 		////////////////////////////////////////////
 		// CLASS :
 		////////////////////////////////////////////
@@ -36,12 +34,9 @@
 				this.average_rating = foodcartObj.average_rating;
 				this.food_name = foodcartObj.items.food_name;
 				this.vegetarian = foodcartObj.items.vegetarian;
-
 				console.log('CLASS : this --> ', this);
 				this.build();
-				// console.log('class this --> ' + this);
 			}
-
 			////////////////////////////////////////////
 			// BUILD :: GENERATE TEMPLATE
 			build() {
@@ -49,7 +44,6 @@
 				const source = $('#fc-template').html();
 				//turns that string into a handlebars function
 				const template = Handlebars.compile(source);
-
 				const context = {
 					name: this.name,
 					description: this.description,
@@ -102,7 +96,12 @@
 				console.log('response TEST --> ', response);
 				console.log('response 1 TEST --> ', response[1]);
 
-				new FoodcartDetails(response); // [0]
+				let topResults = response.splice(0, 5);
+				console.log('topResults --> ', topResults);
+				for (let i = 0; i < topResults.length; i++) {
+					new FoodcartDetails(topResults[i]);
+				}
+				// new FoodcartDetails(response[0]); // [0]
 				console.log('new FoodcartDetails response --> ', response);
 			}).catch((error) => {
 				console.log(error);
