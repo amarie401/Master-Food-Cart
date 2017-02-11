@@ -163,9 +163,9 @@
 
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
 			/////////////////////////////////////////////////////////
-			// $('.build-cart').on('click', function() {
-			// 	('.build-foodcart-container').removeClass('is-visibility-hidden');
-			// }); // *** NEED TO FIX ***
+			$('.build-cart').on('click', function() {
+				$('.build-foodcart-container, .build-foodcart-container-form').toggleClass('is-hidden');
+			}); // *** NEED TO FIX ***
 
 		} // END BIND EVENTS
 
