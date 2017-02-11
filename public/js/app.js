@@ -68,47 +68,48 @@
 		/////////////////////////////////////
 		// FUNCTION: API CALL // SEARCH RESULTS
 		/////////////////////////////////////
-		function APIRequest(query) {
-			query = encodeURIComponent(query);
-			console.log('query --> ' + query);
-			$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
-				.then((response) => {
-					console.log('response TEST --> ', response);
-					console.log('response 0 TEST --> ', response[0]);
-					console.log('response 1 TEST --> ', response[1]);
-					console.log('response 2 TEST --> ', response[2]);
-					console.log('response 3 TEST --> ', response[3]);
-					console.log('response 4 TEST --> ', response[4]);
-					console.log('response 5 TEST --> ', response[5]);
-					console.log('response 6 TEST --> ', response[6]);
-					new FoodcartDetails(response); // [0]
-					console.log('new FoodcartDetails response --> ', response);
-				});
-		} // end function
+		// function APIRequest(query) {
+		// 	query = encodeURIComponent(query);
+		// 	console.log('query --> ' + query);
+		// 	$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
+		// 		.then((response) => {
+		// 			console.log('response TEST --> ', response);
+		// 			console.log('response 0 TEST --> ', response[0]);
+		// 			console.log('response 1 TEST --> ', response[1]);
+		// 			console.log('response 2 TEST --> ', response[2]);
+		// 			console.log('response 3 TEST --> ', response[3]);
+		// 			console.log('response 4 TEST --> ', response[4]);
+		// 			console.log('response 5 TEST --> ', response[5]);
+		// 			console.log('response 6 TEST --> ', response[6]);
+		// 			new FoodcartDetails(response); // [0]
+		// 			console.log('new FoodcartDetails response --> ', response);
+		// 		});
+		// } // end function
 
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
-		// function APIRequest(query) {
-		// 	query = encodeURIComponent(query);
-		// 	$.ajax({
-		// 		method: 'GET',
-		// 		url: `https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`,
-		// 		header: {
-		// 			"content-type": "application/json;charset=utf-8"
-		// 		}
-		// 	}).then((response) => {
-		// 		console.log('response TEST --> ', response);
-		// 		console.log('response 1 TEST --> ', response[1]);
-		//
-		//
-		// 		console.log('response results --> ', response.results);
-		// 		new FoodcartDetails(response); // [0]
-		// 		console.log('new FoodcartDetails response --> ', response);
-		// 	}).catch((error) => {
-		// 		console.log(error);
-		// 	});
-		// }
+		function APIRequest(query) {
+			query = encodeURIComponent(query);
+			$.ajax({
+				method: 'GET',
+				url: `https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`,
+				dataType: 'json',
+				header: {
+					"content-type": "application/json;charset=utf-8"
+				}
+			}).then((response) => {
+				console.log('response TEST --> ', response);
+				console.log('response 1 TEST --> ', response[1]);
+
+
+				console.log('response results --> ', response.results);
+				new FoodcartDetails(response); // [0]
+				console.log('new FoodcartDetails response --> ', response);
+			}).catch((error) => {
+				console.log(error);
+			});
+		}
 		/////////////////////////////////////
 		// FUNCTION:
 		/////////////////////////////////////
