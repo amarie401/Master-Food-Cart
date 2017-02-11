@@ -33,8 +33,8 @@
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				//this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
-				this.averageRating = foodcartObj.averageRating;
-				this.foodName = foodcartObj.items.foodName;
+				this.average_rating = foodcartObj.average_rating;
+				this.food_name = foodcartObj.items.food_name;
 				this.vegetarian = foodcartObj.items.vegetarian;
 
 				console.log('CLASS : this --> ', this);
@@ -54,8 +54,8 @@
 					name: this.name,
 					description: this.description,
 					//	image: this.image,
-					averageRating: this.averageRating,
-					foodName: this.foodName,
+					average_rating: this.average_rating,
+					food_name: this.food_name,
 					vegetarian: this.vegetarian
 				};
 				const html = template(context);
@@ -102,8 +102,6 @@
 				console.log('response TEST --> ', response);
 				console.log('response 1 TEST --> ', response[1]);
 
-
-				console.log('response results --> ', response.results);
 				new FoodcartDetails(response); // [0]
 				console.log('new FoodcartDetails response --> ', response);
 			}).catch((error) => {
