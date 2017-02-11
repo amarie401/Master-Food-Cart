@@ -30,12 +30,31 @@
 
         </div>
         <!-- END template-container -->
-        <div class="build-foodcart-container is-visibility-hidden">
+
+        
+        <div class="build-foodcart-container-form">
             <form class="build-foodcart-form">
                 <input id="build-foodcart-title" type ="text" name="foodcart-title" placeholder="Title...">
                 <input id="build-foodcart-image" type="file" accept="image/jpeg, image/jpg" name="foodcart-image">
                 <input class ="build-foodcart-btn" type="submit" value="Submit">
             </form>
+        </div>
+        <div class="build-foodcart-container">
+            <button class="build-fc-close">X</button>
+            <div class="build-fc-top-container">
+                <img class="build-fc-image" src="#">
+                <!-- END image  -->
+                <div class="build-fc-title-container">
+                    <div class="build-fc-title">{{Title}}
+                    </div>
+                    <!-- END build-fc-title -->
+                    <div class="build-fc-description">{{Description}}
+                    </div>
+                    <!-- END build-fc-description -->
+                </div>
+                <!-- END fc-title-container -->
+            </div>
+            <!-- END build-fc-top-container -->
         </div>
 
     </div>
