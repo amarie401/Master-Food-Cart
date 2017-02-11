@@ -29,18 +29,11 @@
 
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
-				// this.avgRating = foodcartObj.id;
-				// this.image = `https://image.tmdb.org/t/p/w185_and_h278_bestv2/${foodcartObj.poster_path}`;
-				// this.name = foodcartObj.title;
-				// this.description = foodcartObj.overview;
-				// Real API obj
-				// FOOD CART //
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				//this.image = `https://foodcarts2017.herokuapp.com/${foodcartObj.image}`; // NEEDS UPDATE ONCE API IS LIVE
 				this.averageRating = foodcartObj.averageRating;
-				// FOOD ITEMS //
 				this.foodName = foodcartObj.foodName;
 				this.vegetarian = foodcartObj.vegetarian;
 
@@ -58,12 +51,6 @@
 				const template = Handlebars.compile(source);
 
 				const context = {
-					// image: this.image,
-					// name: this.name,
-					// description: this.description,
-					// avgRating: this.avgRating,
-
-					// Real API context
 					name: this.name,
 					description: this.description,
 					//	image: this.image,
@@ -104,10 +91,12 @@
 				}
 			}).then((response) => {
 				console.log('response TEST --> ' + response);
+				console.dir('response DIR TEST --> ' + response);
+
 
 				console.log('response results --> ' + response.results);
 				new FoodcartDetails(response); // [0]
-				console.log(response);
+				console.log('new FoodcartDetails response --> ' + response);
 			}).catch((error) => {
 				console.log(error);
 			});
@@ -158,8 +147,8 @@
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
 			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.fc-close', function() {
-				$(this).parents('.fc-main-container').toggleClass('is-hidden');
-				$('.gr-container, .rr-container').toggleClass('is-hidden');
+				$(this).parents('.fc-main-container', '.gr-container', '.rr-container').toggleClass('is-hidden');
+				// $('.gr-container', '.rr-container').toggleClass('is-hidden');
 			});
 			$('.template-container').on('click', '.gr-close', function() {
 				$(this).parents('.gr-container').toggleClass('is-hidden');
