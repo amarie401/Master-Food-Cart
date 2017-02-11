@@ -37,7 +37,7 @@
 				this.foodName = foodcartObj.foodName;
 				this.vegetarian = foodcartObj.vegetarian;
 
-				console.log('this --> ' + this);
+				console.log('CLASS : this --> ', this);
 				this.build();
 				// console.log('class this --> ' + this);
 			}
@@ -90,14 +90,13 @@
 					"content-type": "application/json;charset=utf-8"
 				}
 			}).then((response) => {
-				console.log('response TEST --> ' + response);
-				console.log('response 1 TEST --> ' + response[1]);
-				console.dir('response DIR TEST --> ' + response);
+				console.log('response TEST --> ', response);
+				console.log('response 1 TEST --> ', response[1]);
 
 
-				console.log('response results --> ' + response.results);
+				console.log('response results --> ', response.results);
 				new FoodcartDetails(response); // [0]
-				console.log('new FoodcartDetails response --> ' + response);
+				console.log('new FoodcartDetails response --> ', response);
 			}).catch((error) => {
 				console.log(error);
 			});
@@ -126,7 +125,7 @@
 				event.preventDefault();
 				clearContent();
 				const searchValue = event.target[0].value; //grab value from input
-				console.log('input --> ' + searchValue);
+				console.log('input --> ', searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
 				$('.veggie').removeClass('is-visibility-hidden');
 				searchForm.reset(); // clear form
