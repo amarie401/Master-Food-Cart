@@ -128,6 +128,7 @@
 				console.log('input --> ', searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
 				$('.veggie').removeClass('is-visibility-hidden');
+				$('.build-cart').removeClass('is-visibility-hidden');
 				searchForm.reset(); // clear form
 			});
 
