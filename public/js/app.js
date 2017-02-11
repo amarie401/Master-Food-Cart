@@ -91,6 +91,7 @@
 				}
 			}).then((response) => {
 				console.log('response TEST --> ' + response);
+				console.log('response 1 TEST --> ' + response[1]);
 				console.dir('response DIR TEST --> ' + response);
 
 
