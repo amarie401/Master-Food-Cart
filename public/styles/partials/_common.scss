@@ -23,13 +23,13 @@ $desktop-width: 730px;
 }
 
 body {
-    background: $dolphin;
+    background: $azure;
     font-size: 16px;
     line-height: 1.6;
 }
 
 button {
-  color: $kabul;
+  color: $turbo;
 }
 
 .main-container {
@@ -40,94 +40,101 @@ button {
 }
 
 header {
-  border-bottom: 5px solid $brownDerby;
+    border-bottom: 5px solid $teal;
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+.hdr-title-add { //div
+  width: 32%;
   display: flex;
-  width: 100%;
+  flex-flow: column wrap;
+  padding: 12px;
 
-    .main-title {
-      padding: 25px;
-      width: 60%;
+  .main-title { //h1 tag
+
+  }
+}
+
+.build-cart-btn-container { //div
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    &:after {
+      content: " Add new cart";
+      font-family: $secondaryFont;
+      margin-top: 15px;
     }
 
-    .main-form {
-      display: flex;
-      flex-flow: row wrap;
-      margin-top: 25px;
-      width: 40%;
+        .build-cart-btn { //button
+          border: 2px solid green;
+          border-radius: 50%;
+          box-shadow: 0 0 3px gray;
+          color: green;
+          display: block;
+          font-size: 18px;
+          font-weight: 800;
+          height: 35px;
+          margin: 10px;
+          padding: 6px;
+          text-align: center;
+          width: 35px;
 
-      .search-form {
+    }
+}
+// end of left header container stuff
+
+.search-form { // actual form tags
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        width: 100%;
-
-      }
-    }
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 68%;
 }
 
-.veggie { // button  ** to be removed until on click (search)
-  border: 1px solid #999;
-  color: #333;
-  display: block;
-  margin: 10px;
-  padding: 6px;
-  width: 70%;
-}
 
-.build-cart-btn-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 100%;
+  #search-field {
+    border: 1px solid #999;
+    color: #333;
+    height: 40px;
+    // margin: 10px auto;
+    padding: 6px;
+    width: 250px;
+    // width: 70%;
+  }
 
-        .build-cart-btn {
-        border: 1px solid #999;
-        color: #333;
-        display: block;
-        margin: 10px;
-        padding: 6px;
-        width: 70%;
-    }
-}
+  .veggie { // button  ** to be removed until on click (search)
+    border: 1px solid #999;
+    color: #333;
+    display: block;
+    margin: 10px;
+    padding: 6px;
+    // width: 100px;
+  }
 
-.button-holder {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+
 
 .btn-submit {
   border: 1px solid #999;
   color: #333;
   display: block;
+  height: 40px;
   margin: 10px;
   padding: 6px;
-  width: 43%;
+  // width: 43%;
+  font-size: 16px;
 }
 
 .btn-clear {
   border: 1px solid #999;
   color: #333;
   display: block;
+  height: 40px;
   margin: 10px;
   padding: 6px;
-  width: 23%;
+  // width: 23%;
 }
-
-#search-field {
-  border: 1px solid #999;
-  color: #333;
-  margin: 10px auto;
-  padding: 6px;
-  width: 70%;
-
-    &[type=text] {
-        margin-top: 0;
-    }
-}
-
-
-
 
 ////////////////////////////////////////////////
 // Make review / rating section //
@@ -144,8 +151,8 @@ input .btn-review {
 // Build a food cart //
 
 .build-foodcart-container-form {
-  background: $schooner;
-  border: 6px solid $brownDerby;
+  background: $atlantis;
+  border: 6px solid $teal;
   border-radius: 5px;
   display: flex;
   flex-flow: row wrap;
@@ -154,8 +161,8 @@ input .btn-review {
 }
 
 .build-foodcart-container {
-  background: $schooner;
-  border: 6px solid $brownDerby;
+  background: $atlantis;
+  border: 6px solid $teal;
   border-radius: 5px;
   display: flex;
   flex-flow: row wrap;
@@ -164,7 +171,7 @@ input .btn-review {
 }
 
 .build-fc-close {
-  color: $kabul;
+  color: $turbo;
   font-weight: 800;
   display: flex;
   color: #5d4a46;
@@ -177,13 +184,12 @@ input .btn-review {
 }
 
 .build-fc-top-container {
-  // background: #f2f2f2;
   display: flex;
   padding: 10px 10px 5px 10px;
   width: 100%;
 
   .build-fc-image { // logo
-    background: $moonRaker;
+    background: $funGreen;
     height: 200px;
     margin-right: 1%;
     width: 30%;
@@ -191,20 +197,17 @@ input .btn-review {
 }
 
 .build-fc-title-container {
-  // border: 1px solid black;
   height: 200px;
   width: 69%;
 
   .build-fc-title {
-    background: $moonRaker;
-    // border: 1px solid black;
+    background: $funGreen;
     height: 100px;
     width: 100%;
   }
 
   .build-fc-description {
-    background: $moonRaker;
-    // border: 1px solid black;
+    background: $funGreen;
     height: 90px;
     margin-top: 10px;
     width: 100%;

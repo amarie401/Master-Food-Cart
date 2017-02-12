@@ -3,8 +3,8 @@
 ////////////////////////////////
 
 .fc-main-container {
-  background: $schooner;
-  border: 6px solid $brownDerby;
+  background: $atlantis;
+  border: 6px solid $teal;
   border-radius: 5px;
   display: flex;
   flex-flow: row wrap;
@@ -13,7 +13,7 @@
 }
 
 .fc-close {
-  color: $kabul;
+  color: $turbo;
   font-weight: 800;
   display: flex;
   color: #5d4a46;
@@ -34,7 +34,7 @@
   width: 100%;
 
   .fc-image { // logo
-    background: $moonRaker;
+    background: $funGreen;
     height: 200px;
     margin-right: 1%;
     width: 30%;
@@ -47,14 +47,14 @@
   width: 69%;
 
   .fc-title {
-    background: $moonRaker;
+    background: $funGreen;
     // border: 1px solid black;
     height: 100px;
     width: 100%;
   }
 
   .fc-avg-rating {
-    background: $moonRaker;
+    background: $funGreen;
     // border: 1px solid black;
     height: 90px;
     margin-top: 10px;
@@ -75,14 +75,14 @@
   width: 100%;
 
   .fc-desc {
-    background: $moonRaker;
+    background: $funGreen;
     // border: 1px solid black;
     height: 200px;
     width: 69%;
 
   }
   .fc-food-items {
-    background: $moonRaker;
+    background: $funGreen;
     height: 200px;
     width: 30%;
 
@@ -110,7 +110,7 @@
 }
 
 .btn-make-rate {
-  border: 2px solid $brownDerby;
+  border: 2px solid $teal;
   border-radius: 5px;
   font-size: 20px;
   height: auto;
@@ -121,7 +121,7 @@
 .btn-see-rate {
   height: auto;
   margin: 5px 10px 5px 10px;
-  border: 2px solid $brownDerby;
+  border: 2px solid $teal;
   font-size: 20px;
   padding: 10px;
   border-radius: 5px;
@@ -135,8 +135,8 @@
   //remove later
   margin-top: 15px;
   //
-  background: $schooner;
-  border: 6px solid $brownDerby;
+  background: $atlantis;
+  border: 6px solid $teal;
   border-radius: 5px;
   display: flex;
   flex-flow: row wrap;
@@ -146,20 +146,20 @@
 }
 
 .rr-rating {
-  background: $moonRaker;
+  background: $funGreen;
   height: 75px;
   width: 100%;
 }
 
 .rr-review {
-  background: $moonRaker;
+  background: $funGreen;
   height: 100px;
   margin-top: 10px;
   width: 100%;
 }
 
 .rr-close {
-  color: $kabul;
+  color: $turbo;
   font-weight: 800;
   display: flex;
   color: #5d4a46;
@@ -179,8 +179,8 @@
   //remove later
   margin-top: 15px;
   //
-  background: $schooner;
-  border: 6px solid $brownDerby;
+  background: $atlantis;
+  border: 6px solid $teal;
   border-radius: 5px;
   display: flex;
   flex-flow: row nowrap;
@@ -190,14 +190,14 @@
 }
 
 .gr-review {
-  background: $moonRaker;
+  background: $funGreen;
   height: 100px;
   margin-top: 10px;
   width: 100%;
 }
 
 .gr-close {
-  color: $kabul;
+  color: $turbo;
   font-weight: 800;
   display: flex;
   color: #5d4a46;
