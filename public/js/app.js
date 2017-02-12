@@ -29,6 +29,7 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+				this.foodCartId = foodcartObj.items.foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
@@ -46,6 +47,7 @@
 				//turns that string into a handlebars function
 				const template = Handlebars.compile(source);
 				const context = {
+					id: this.foodCartId,
 					name: this.name,
 					description: this.description,
 					image: this.image,
