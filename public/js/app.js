@@ -189,16 +189,14 @@
 		function createRatings(foodCartID, rating, review) {
 			const settings = {
 				method: 'POST',
-				//ate_with_login?api_key=${apiKey}&username=shanem&password=tiydurham2017&request_token=${token}`);
-
-				url: `https://foodcarts2017.herokuapp.com/api/rating`,
+				url: 'https://foodcarts2017.herokuapp.com/api/rating',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
 					"foodcart_id": foodCartID,
-					"review": review,
-					"score": rating
+					"score": rating,
+					"review": review
 				})
 			};
 			$.ajax(settings).then((response) => {
