@@ -147,8 +147,7 @@
 				const buildCart = event.target[0].value;
 				console.log('buildcart ', buildCart);
 				createCart(buildCart);
-
-				foodcartForm.reset(); // clear form
+				$('.build-foodcart-form')[0].reset();
 			});
 
 			$('.build-cart-btn').on('click', function() {
