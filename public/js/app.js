@@ -170,12 +170,24 @@
 
 		$('.template-container').on('submit', '.gr-form', function() {
 			event.preventDefault();
-			const rating = $('.food-cart-rating').val();
+			const GetRating = $('.food-cart-rating').val();
+			const rating = parseInt(GetRating);
 			console.log(rating);
-			const foodCartID = $('.food-cart-rating').attr('data-id');
+			let tester = typeof(rating);
+			console.log('rating=  ', tester);
+			const GetFoodCartID = $('.food-cart-rating').attr('data-id');
+			const foodCartID = parseInt(GetFoodCartID);
 			console.log(foodCartID);
+			let tester1 = typeof(foodCartID);
+			console.log('foodcartid=  ', tester1);
 			const review = event.target[1].value;
 			console.log(review);
+			let tester2 = typeof(review);
+			console.log('review=  ', tester2);
+
+			// var sVal = '234';
+			// var iNum = parseInt(sVal); //Output will be 234.
+
 
 			createRatings(foodCartID, rating, review);
 			$('.gr-form').each(function() { //reset form
