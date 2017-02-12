@@ -192,7 +192,7 @@
 
 			$('.build-cart-btn').on('click', function() {
 				$('.build-foodcart-container-form').toggleClass('is-visibility-hidden');
-				// $('.template-container').toggleClass('is-hidden'); // * may need to change, but works for now*
+				// $('.template-container').toggleClass('is-hidden'); // * may need to implement somehow?*
 			});
 
 			///////////// ON CLICK : CLOSE BUILD CONTAINER  /////////////
