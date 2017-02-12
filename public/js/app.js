@@ -29,6 +29,7 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+				this.foodCartId = foodcartObj.items.foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
@@ -46,6 +47,7 @@
 				//turns that string into a handlebars function
 				const template = Handlebars.compile(source);
 				const context = {
+					id: this.foodCartId,
 					name: this.name,
 					description: this.description,
 					image: this.image,
@@ -203,6 +205,45 @@
 			});
 
 		} // END BIND EVENTS
+
+		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
+		//////////////////////////////////////////////////////////
+
+		$('.template-container').on('change', '.food-cart-rating', function() {
+			const rating = $(this).val();
+			console.log(rating);
+			const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
+			console.log(foodCartID);
+
+
+			// rateMovie(rating, movieId);
+		// }
+		});
+
+		/////////////////////////////////////
+		// FUNCTION: CREATE RATINGS/REVIEWS
+		/////////////////////////////////////
+		function createRatings(foodCartID, rating, review) {
+			const settings = {
+				method: 'POST',
+				url: ` https://foodcarts2017.herokuapp.com/api/rating`,
+				headers: {
+					"content-type": "application/json;charset=utf-8"
+				},
+				data: JSON.stringify({
+					// "foodCartID":
+					// "review":
+					// "rating":
+				})
+			};
+			$.ajax(settings).then((response) => {
+				console.log('sucess!');
+			}).catch((error) => {
+				console.log('error in ajax ' + error);
+			});
+		}
+
+
 
 
 		/////////////////////////////////////
