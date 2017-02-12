@@ -21,6 +21,7 @@
 	const FoodcartModule = function() {
 		const searchForm = document.querySelector('.search-form');
 		const foodcartForm = document.querySelector('.build-foodcart-container-form');
+		const grForm = document.querySelector('.gr-form');
 		////////////////////////////////////////////
 		// CLASS :
 		////////////////////////////////////////////
@@ -29,7 +30,11 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+<<<<<<< HEAD
 				this.foodCartId = foodcartObj.items.foodcart_id[0];
+=======
+				this.foodCartId = foodcartObj.items[0].foodcart_id;
+>>>>>>> 3698acf349f5b05ea676d11d4b1f0773542c747b
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
@@ -206,6 +211,7 @@
 
 
 
+<<<<<<< HEAD
 			///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
 			//////////////////////////////////////////////////////////
 
@@ -216,6 +222,27 @@
 				const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
 				console.log(foodCartID);
 
+=======
+
+		// grForm.addEventListener('submit', () => {
+		// 	event.preventDefault();
+		// 	const descriptionValue = event.target[0].value;
+		//
+		// 	return descriptionValue;
+		//  });
+
+		$('.template-container').on('submit', '.gr-form', function() {
+			event.preventDefault();
+			const rating = $('.food-cart-rating').val();
+			console.log(rating);
+			const foodCartID = $('.food-cart-rating').attr('data-id');
+			console.log(foodCartID);
+			const review = event.target[1].value;
+			console.log(review);
+
+			createRatings(foodCartID, rating, review);
+		});
+>>>>>>> 3698acf349f5b05ea676d11d4b1f0773542c747b
 
 				// rateMovie(rating, movieId);
 				// }
@@ -227,14 +254,14 @@
 		function createRatings(foodCartID, rating, review) {
 			const settings = {
 				method: 'POST',
-				url: ` https://foodcarts2017.herokuapp.com/api/rating`,
+				url: 'https://foodcarts2017.herokuapp.com/api/rating',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
-					// "foodCartID":
-					// "review":
-					// "rating":
+					"foodCartId": foodCartID,
+					"review": review,
+					"score": rating
 				})
 			};
 			$.ajax(settings).then((response) => {
