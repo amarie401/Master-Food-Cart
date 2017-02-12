@@ -208,6 +208,7 @@
 					"description": 'descyo!'
 				})
 			};
+			console.log(name);
 			$.ajax(settings).then((response) => {
 				console.log('success!');
 			}).catch((error) => {
