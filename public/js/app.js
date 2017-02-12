@@ -35,7 +35,7 @@
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
 				this.average_rating = foodcartObj.average_rating;
-				this.food_name = foodcartObj.items.food_name[0];
+				this.food_name = foodcartObj.items.food_name;
 				this.vegetarian = foodcartObj.items.vegetarian;
 				console.log('CLASS : this --> ', this);
 				this.build();
@@ -97,11 +97,16 @@
 					"content-type": "application/json;charset=utf-8"
 				}
 			}).then((response) => {
+				console.log('response TEST --> ', response);
+				console.log('response 1 TEST --> ', response[1]);
 
 				let topResults = response.splice(0, 5);
+				console.log('topResults --> ', topResults);
 				for (let i = 0; i < topResults.length; i++) {
 					new FoodcartDetails(topResults[i]);
 				}
+				// new FoodcartDetails(response[0]); // [0]
+				console.log('new FoodcartDetails response --> ', response);
 			}).catch((error) => {
 				console.log(error);
 			});
@@ -110,7 +115,21 @@
 		// FUNCTION:
 		/////////////////////////////////////
 		function buildAFoodCart() {
-			// TBD
+			// const settings = {
+			// 	method: 'POST',
+			// 	url: `https://api.themoviedb.org/3/movie/${movie}/rating?api_key=${apiKey}&session_id=${sessionId}`,
+			// 	headers: {
+			// 		"content-type": "application/json;charset=utf-8"
+			// 	},
+			// 	data: JSON.stringify({
+			// 		"value": rating
+			// 	})
+			// };
+			// $.ajax(settings).then((response) => {
+			// 	console.log('we made it!');
+			// }).catch((error) => {
+			// 	console.log('error in ajax ' + error);
+			// });
 		}
 
 		/////////////////////////////////////
@@ -140,17 +159,20 @@
 			});
 
 			///////////// ON CLICK : SEE RATING BUTTON  /////////////
+			/////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.btn-see-rate', function() {
 				// console.log('in');
 				$('.rr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 
 			///////////// ON CLICK : MAKE RATING BUTTON  /////////////
+			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.btn-make-rate', function() {
 				// console.log('in');
-				$(this).parents('.gr-container').toggleClass('is-hidden'); // add fadeIn later
+				$('.gr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
+			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.fc-close', function() {
 				$(this).parents('.fc-main-container', '.gr-container', '.rr-container').toggleClass('is-hidden');
 				// $('.gr-container', '.rr-container').toggleClass('is-hidden');
@@ -164,6 +186,7 @@
 			});
 
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
+			/////////////////////////////////////////////////////////
 			foodcartForm.addEventListener('submit', () => {
 				event.preventDefault();
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
@@ -176,40 +199,37 @@
 			});
 
 			///////////// ON CLICK : CLOSE BUILD CONTAINER  /////////////
+			//////////////////////////////////////////////////////////
+
 			$('.build-fc-close').on('click', function() {
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
 			});
 
-			///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
-			$('.template-container').on('submit', '.food-cart-rating', function() {
-				event.preventDefault();
-				const rating = $(this).val();
-				console.log(rating);
-				const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
-				console.log(foodCartID);
-
-				// grForm.addEventListener('submit', () => {
-				// 	event.preventDefault();
-				// 	const descriptionValue = event.target[0].value;
-				//
-				// 	return descriptionValue;
-				//  });
-
-				$('.template-container').on('submit', '.gr-form', function() {
-					event.preventDefault();
-					const rating = $('.food-cart-rating').val();
-					console.log(rating);
-					const foodCartID = $('.food-cart-rating').attr('data-id');
-					console.log(foodCartID);
-					const review = event.target[1].value;
-					console.log(review);
-
-					createRatings(foodCartID, rating, review);
-				});
-				// rateMovie(rating, movieId);
-				// }
-			});
 		} // END BIND EVENTS
+
+		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
+		//////////////////////////////////////////////////////////
+
+
+		// grForm.addEventListener('submit', () => {
+		// 	event.preventDefault();
+		// 	const descriptionValue = event.target[0].value;
+		//
+		// 	return descriptionValue;
+		//  });
+
+		$('.template-container').on('submit', '.gr-form', function() {
+			event.preventDefault();
+			const rating = $('.food-cart-rating').val();
+			console.log(rating);
+			const foodCartID = $('.food-cart-rating').attr('data-id');
+			console.log(foodCartID);
+			const review = event.target[1].value;
+			console.log(review);
+
+			createRatings(foodCartID, rating, review);
+		});
+
 		/////////////////////////////////////
 		// FUNCTION: CREATE RATINGS/REVIEWS
 		/////////////////////////////////////
