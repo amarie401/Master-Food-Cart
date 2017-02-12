@@ -193,9 +193,9 @@
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
-					// "foodcart_id": foodCartID,
-					"score": rating //,
-					// "review": review
+					"foodcart_id": foodCartID,
+					"score": rating,
+					"review": review
 				})
 			};
 			$.ajax(settings).then((response) => {
