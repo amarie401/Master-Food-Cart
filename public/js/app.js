@@ -241,7 +241,7 @@
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
-					"foodCartID": foodCartID,
+					"foodCartId": foodCartID,
 					"review": review,
 					"rating": rating
 				})
