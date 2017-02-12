@@ -190,7 +190,7 @@
 				method: 'POST',
 				url: `https://foodcarts2017.herokuapp.com/api/rating`,
 				headers: {
-					"content-type": "text/html;charset=utf-8"
+					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
 					"foodcart_id": foodCartID,
