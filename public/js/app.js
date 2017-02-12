@@ -223,6 +223,8 @@
 			const settings = {
 				method: 'POST',
 				url: `https://foodcarts2017.herokuapp.com/api/rating`,
+				crossDomain: true,
+				dataType: 'json',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
