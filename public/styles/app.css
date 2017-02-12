@@ -141,7 +141,7 @@ body {
   line-height: 1.6; }
 
 button {
-  color: #edde05; }
+  color: #333; }
 
 .template-container {
   margin: 15px 20px; }
@@ -224,50 +224,6 @@ header {
   flex-flow: row wrap;
   position: relative;
   width: 75%; }
-
-.build-foodcart-container {
-  background: #93BD2C;
-  border: 6px solid #00887c;
-  border-radius: 5px;
-  display: flex;
-  flex-flow: row wrap;
-  position: relative;
-  width: 75%; }
-
-.build-fc-close {
-  color: #edde05;
-  font-weight: 800;
-  display: flex;
-  color: #5d4a46;
-  position: absolute;
-  top: -5px;
-  background: transparent;
-  right: -5px;
-  border: 0;
-  font-size: 21px; }
-
-.build-fc-top-container {
-  display: flex;
-  padding: 10px 10px 5px 10px;
-  width: 100%; }
-  .build-fc-top-container .build-fc-image {
-    background: #00833d;
-    height: 200px;
-    margin-right: 1%;
-    width: 30%; }
-
-.build-fc-title-container {
-  height: 200px;
-  width: 69%; }
-  .build-fc-title-container .build-fc-title {
-    background: #00833d;
-    height: 100px;
-    width: 100%; }
-  .build-fc-title-container .build-fc-description {
-    background: #00833d;
-    height: 90px;
-    margin-top: 10px;
-    width: 100%; }
 
 * {
   font-size: 16px; }
@@ -433,6 +389,11 @@ h3 {
   background: #00833d;
   height: 100px;
   margin-top: 10px;
+  width: 100%; }
+
+input #gr-search-field {
+  height: 40px;
+  margin: 5px 0;
   width: 100%; }
 
 .gr-close {

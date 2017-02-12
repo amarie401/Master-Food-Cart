@@ -195,7 +195,11 @@
   margin-top: 10px;
   width: 100%;
 }
-
+input #gr-search-field {
+  height: 40px;
+  margin: 5px 0;
+  width: 100%;
+}
 .gr-close {
   color: $turbo;
   font-weight: 800;
