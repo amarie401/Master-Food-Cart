@@ -30,7 +30,7 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
-				this.foodCartId = foodcartObj.items[0].foodcart_id;
+				this.foodcart_id = foodcartObj.items[0].foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
@@ -48,7 +48,7 @@
 				//turns that string into a handlebars function
 				const template = Handlebars.compile(source);
 				const context = {
-					id: this.foodCartId,
+					id: this.foodcart_id,
 					name: this.name,
 					description: this.description,
 					image: this.image,
@@ -189,12 +189,14 @@
 		function createRatings(foodCartID, rating, review) {
 			const settings = {
 				method: 'POST',
-				url: 'https://foodcarts2017.herokuapp.com/api/rating',
+				//ate_with_login?api_key=${apiKey}&username=shanem&password=tiydurham2017&request_token=${token}`);
+
+				url: `https://foodcarts2017.herokuapp.com/api/rating?foodCartId=${}`,
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
-					"foodCartId": foodCartID,
+					"foodcart_id": foodCartID,
 					"review": review,
 					"score": rating
 				})
