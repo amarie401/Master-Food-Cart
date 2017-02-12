@@ -29,12 +29,12 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
-				this.foodCartId = foodcartObj.items.foodcart_id;
+				this.foodCartId = foodcartObj.items.foodcart_id[0];
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
 				this.average_rating = foodcartObj.average_rating;
-				this.food_name = foodcartObj.items.food_name;
+				this.food_name = foodcartObj.items.food_name[0];
 				this.vegetarian = foodcartObj.items.vegetarian;
 				console.log('CLASS : this --> ', this);
 				this.build();
@@ -204,22 +204,23 @@
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
 			});
 
+
+
+			///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
+			//////////////////////////////////////////////////////////
+
+			$('.template-container').on('submit', '.food-cart-rating', function() {
+				event.preventDefault();
+				const rating = $(this).val();
+				console.log(rating);
+				const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
+				console.log(foodCartID);
+
+
+				// rateMovie(rating, movieId);
+				// }
+			});
 		} // END BIND EVENTS
-
-		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
-		//////////////////////////////////////////////////////////
-
-		$('.template-container').on('change', '.food-cart-rating', function() {
-			const rating = $(this).val();
-			console.log(rating);
-			const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
-			console.log(foodCartID);
-
-
-			// rateMovie(rating, movieId);
-		// }
-		});
-
 		/////////////////////////////////////
 		// FUNCTION: CREATE RATINGS/REVIEWS
 		/////////////////////////////////////
@@ -237,7 +238,7 @@
 				})
 			};
 			$.ajax(settings).then((response) => {
-				console.log('sucess!');
+				console.log('success!');
 			}).catch((error) => {
 				console.log('error in ajax ' + error);
 			});
