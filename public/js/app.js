@@ -243,7 +243,7 @@
 				data: JSON.stringify({
 					"foodCartId": foodCartID,
 					"review": review,
-					"rating": rating
+					"score": rating
 				})
 			};
 			$.ajax(settings).then((response) => {
