@@ -171,23 +171,10 @@
 		$('.template-container').on('submit', '.gr-form', function() {
 			event.preventDefault();
 			const GetRating = $('.food-cart-rating').val();
-			const rating = parseInt(GetRating);
-			console.log(rating);
-			let tester = typeof(rating);
-			console.log('rating=  ', tester);
+			const rating = parseInt(GetRating); // make sure its a number
 			const GetFoodCartID = $('.food-cart-rating').attr('data-id');
-			const foodCartID = parseInt(GetFoodCartID);
-			console.log(foodCartID);
-			let tester1 = typeof(foodCartID);
-			console.log('foodcartid=  ', tester1);
+			const foodCartID = parseInt(GetFoodCartID); //make sure its a number
 			const review = event.target[1].value;
-			console.log(review);
-			let tester2 = typeof(review);
-			console.log('review=  ', tester2);
-
-			// var sVal = '234';
-			// var iNum = parseInt(sVal); //Output will be 234.
-
 
 			createRatings(foodCartID, rating, review);
 			$('.gr-form').each(function() { //reset form
@@ -201,7 +188,7 @@
 		function createRatings(foodCartID, rating, review) {
 			const settings = {
 				method: 'POST',
-				url: 'https://foodcarts2017.herokuapp.com/api/rating',
+				url: `https://foodcarts2017.herokuapp.com/api/rating`,
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
