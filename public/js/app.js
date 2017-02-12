@@ -144,7 +144,10 @@
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
 			foodcartForm.addEventListener('submit', () => {
 				event.preventDefault();
-				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
+				const buildCart = event.target[0].value;
+				console.log('buildcart ', buildCart);
+				createCart(buildCart);
+
 				foodcartForm.reset(); // clear form
 			});
 
@@ -158,6 +161,27 @@
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
 			});
 
+			// foodcartForm.addEventListener('submit', () => {
+			// 	event.preventDefault();
+			// 	const buildCart = event.target[0].value;
+			// 	console.log(buildCart);
+			// 	console.log('buildcart ', buildCart);
+			// });
+
+			$('.template-container').on('submit', '.gr-form', function() {
+				event.preventDefault();
+				const GetRating = $('.food-cart-rating').val();
+				const rating = parseInt(GetRating); // make sure its a number
+				const GetFoodCartID = $('.food-cart-rating').attr('data-id');
+				const foodCartID = parseInt(GetFoodCartID); //make sure its a number
+				const review = event.target[1].value;
+
+				createRatings(foodCartID, rating, review);
+				$('.gr-form').each(function() { //reset form
+					this.reset();
+				});
+			});
+
 		} // END BIND EVENTS
 
 		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
@@ -168,19 +192,28 @@
 		// 	return descriptionValue;
 		//  });
 
-		$('.template-container').on('submit', '.gr-form', function() {
-			event.preventDefault();
-			const GetRating = $('.food-cart-rating').val();
-			const rating = parseInt(GetRating); // make sure its a number
-			const GetFoodCartID = $('.food-cart-rating').attr('data-id');
-			const foodCartID = parseInt(GetFoodCartID); //make sure its a number
-			const review = event.target[1].value;
-
-			createRatings(foodCartID, rating, review);
-			$('.gr-form').each(function() { //reset form
-				this.reset();
+		/////////////////////////////////////
+		// FUNCTION: BUILD CART
+		/////////////////////////////////////
+		function createCart(name) {
+			const settings = {
+				method: 'POST',
+				url: `https://foodcarts2017.herokuapp.com/api/foodcart`,
+				headers: {
+					"content-type": "application/json;charset=utf-8"
+				},
+				data: JSON.stringify({
+					"name": name,
+					"image": 'imanimage',
+					"description": 'descyo!'
+				})
+			};
+			$.ajax(settings).then((response) => {
+				console.log('success!');
+			}).catch((error) => {
+				console.log('error in ajax ' + error);
 			});
-		});
+		}
 
 		/////////////////////////////////////
 		// FUNCTION: CREATE RATINGS/REVIEWS
