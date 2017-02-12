@@ -247,7 +247,7 @@
 				})
 			};
 			$.ajax(settings).then((response) => {
-				console.log('sucess!');
+				console.log('success!');
 			}).catch((error) => {
 				console.log('error in ajax ' + error);
 			});
