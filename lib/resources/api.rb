@@ -50,7 +50,8 @@ post '/api/rating' do
   r = Rating.new(foodcart_id: params[:foodcart_id], score: params[:score], review: params[:review] )
   if r.valid?
     r.save
-    [201, r.to_json]
+    # [201, r.to_json]
+    r.to_json
 
   else
     halt 400
