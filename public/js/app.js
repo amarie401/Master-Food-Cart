@@ -236,7 +236,7 @@
 		function createRatings(foodCartID, rating, review) {
 			const settings = {
 				method: 'POST',
-				url: ` https://foodcarts2017.herokuapp.com/api/rating`,
+				url: 'https://foodcarts2017.herokuapp.com/api/rating',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
