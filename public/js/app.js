@@ -64,27 +64,6 @@
 		} // end of CLASS
 
 		/////////////////////////////////////
-		// FUNCTION: API CALL // SEARCH RESULTS
-		/////////////////////////////////////
-		// function APIRequest(query) {
-		// 	query = encodeURIComponent(query);
-		// 	console.log('query --> ' + query);
-		// 	$.get(`https://foodcarts2017.herokuapp.com/api/foodcarts?query=${query}`)
-		// 		.then((response) => {
-		// 			console.log('response TEST --> ', response);
-		// 			console.log('response 0 TEST --> ', response[0]);
-		// 			console.log('response 1 TEST --> ', response[1]);
-		// 			console.log('response 2 TEST --> ', response[2]);
-		// 			console.log('response 3 TEST --> ', response[3]);
-		// 			console.log('response 4 TEST --> ', response[4]);
-		// 			console.log('response 5 TEST --> ', response[5]);
-		// 			console.log('response 6 TEST --> ', response[6]);
-		// 			new FoodcartDetails(response); // [0]
-		// 			console.log('new FoodcartDetails response --> ', response);
-		// 		});
-		// } // end function
-
-		/////////////////////////////////////
 		// FUNCTION:  API CALL // SEARCH RESULTS
 		/////////////////////////////////////
 		function APIRequest(query) {
@@ -97,16 +76,12 @@
 					"content-type": "application/json;charset=utf-8"
 				}
 			}).then((response) => {
-				console.log('response TEST --> ', response);
-				console.log('response 1 TEST --> ', response[1]);
 
-				let topResults = response.splice(0, 5);
-				console.log('topResults --> ', topResults);
+				let topResults = response.splice(0, 1);
 				for (let i = 0; i < topResults.length; i++) {
 					new FoodcartDetails(topResults[i]);
 				}
-				// new FoodcartDetails(response[0]); // [0]
-				console.log('new FoodcartDetails response --> ', response);
+				// console.log('new FoodcartDetails response --> ', response);
 			}).catch((error) => {
 				console.log(error);
 			});
@@ -115,21 +90,7 @@
 		// FUNCTION:
 		/////////////////////////////////////
 		function buildAFoodCart() {
-			// const settings = {
-			// 	method: 'POST',
-			// 	url: `https://api.themoviedb.org/3/movie/${movie}/rating?api_key=${apiKey}&session_id=${sessionId}`,
-			// 	headers: {
-			// 		"content-type": "application/json;charset=utf-8"
-			// 	},
-			// 	data: JSON.stringify({
-			// 		"value": rating
-			// 	})
-			// };
-			// $.ajax(settings).then((response) => {
-			// 	console.log('we made it!');
-			// }).catch((error) => {
-			// 	console.log('error in ajax ' + error);
-			// });
+			//TBD
 		}
 
 		/////////////////////////////////////
@@ -139,7 +100,6 @@
 			// html is a get/send type
 			$('.template-container').html('');
 			$('.veggie').addClass('is-visibility-hidden');
-
 		}
 
 		/////////////////////////////////////
@@ -147,7 +107,6 @@
 		/////////////////////////////////////
 		function bindEvents() {
 			///////////// ON CLICK : GET INPUT  /////////////
-			/////////////////////////////////////////////////////////
 			searchForm.addEventListener('submit', () => {
 				event.preventDefault();
 				clearContent();
@@ -159,20 +118,17 @@
 			});
 
 			///////////// ON CLICK : SEE RATING BUTTON  /////////////
-			/////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.btn-see-rate', function() {
 				// console.log('in');
 				$('.rr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 
 			///////////// ON CLICK : MAKE RATING BUTTON  /////////////
-			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.btn-make-rate', function() {
 				// console.log('in');
 				$('.gr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
-			//////////////////////////////////////////////////////////
 			$('.template-container').on('click', '.fc-close', function() {
 				$(this).parents('.fc-main-container', '.gr-container', '.rr-container').toggleClass('is-hidden');
 				// $('.gr-container', '.rr-container').toggleClass('is-hidden');
@@ -186,7 +142,6 @@
 			});
 
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
-			/////////////////////////////////////////////////////////
 			foodcartForm.addEventListener('submit', () => {
 				event.preventDefault();
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
@@ -199,8 +154,6 @@
 			});
 
 			///////////// ON CLICK : CLOSE BUILD CONTAINER  /////////////
-			//////////////////////////////////////////////////////////
-
 			$('.build-fc-close').on('click', function() {
 				$('.build-foodcart-container').toggleClass('is-visibility-hidden');
 			});
@@ -208,9 +161,6 @@
 		} // END BIND EVENTS
 
 		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
-		//////////////////////////////////////////////////////////
-
-
 		// grForm.addEventListener('submit', () => {
 		// 	event.preventDefault();
 		// 	const descriptionValue = event.target[0].value;
@@ -228,6 +178,9 @@
 			console.log(review);
 
 			createRatings(foodCartID, rating, review);
+			$('.gr-form').each(function() { //reset form
+				this.reset();
+			});
 		});
 
 		/////////////////////////////////////
@@ -252,9 +205,6 @@
 				console.log('error in ajax ' + error);
 			});
 		}
-
-
-
 
 		/////////////////////////////////////
 		// FUNCTION: INIT
