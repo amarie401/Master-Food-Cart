@@ -191,7 +191,7 @@
 				method: 'POST',
 				//ate_with_login?api_key=${apiKey}&username=shanem&password=tiydurham2017&request_token=${token}`);
 
-				url: `https://foodcarts2017.herokuapp.com/api/rating?foodCartId=${}`,
+				url: `https://foodcarts2017.herokuapp.com/api/rating`,
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
