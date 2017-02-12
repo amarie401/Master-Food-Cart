@@ -21,6 +21,7 @@
 	const FoodcartModule = function() {
 		const searchForm = document.querySelector('.search-form');
 		const foodcartForm = document.querySelector('.build-foodcart-container-form');
+		const grForm = document.querySelector('.gr-form');
 		////////////////////////////////////////////
 		// CLASS :
 		////////////////////////////////////////////
@@ -29,7 +30,7 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
-				this.foodCartId = foodcartObj.items.foodcart_id;
+				this.foodCartId = foodcartObj.items[0].foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
@@ -209,15 +210,24 @@
 		///////////// ON CLICK : GET RATINGS, REVIEWS, & ID  /////////////
 		//////////////////////////////////////////////////////////
 
-		$('.template-container').on('change', '.food-cart-rating', function() {
-			const rating = $(this).val();
+
+		// grForm.addEventListener('submit', () => {
+		// 	event.preventDefault();
+		// 	const descriptionValue = event.target[0].value;
+		//
+		// 	return descriptionValue;
+		//  });
+
+		$('.template-container').on('submit', '.gr-form', function() {
+			event.preventDefault();
+			const rating = $('.food-cart-rating').val();
 			console.log(rating);
-			const foodCartID = $(this).attr('data-id'); // or $(this).data('id');
+			const foodCartID = $('.food-cart-rating').attr('data-id');
 			console.log(foodCartID);
+			const review = event.target[1].value;
+			console.log(review);
 
-
-			// rateMovie(rating, movieId);
-		// }
+			createRatings(foodCartID, rating, review);
 		});
 
 		/////////////////////////////////////
@@ -231,9 +241,9 @@
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
-					// "foodCartID":
-					// "review":
-					// "rating":
+					"foodCartID": foodCartID,
+					"review": review,
+					"rating": rating
 				})
 			};
 			$.ajax(settings).then((response) => {
