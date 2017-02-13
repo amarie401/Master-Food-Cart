@@ -233,9 +233,9 @@
 				url: `https://foodcarts2017.herokuapp.com/api/foodcart`,
 				crossDomain: true,
 				dataType: 'json',
-				headers: {
-					"content-type": "application/json;charset=utf-8"
-				},
+				// headers: {
+				// 	"content-type": "application/json;charset=utf-8"
+				// },
 				data: {
 					"name": name,
 					"image": "imanimage",
