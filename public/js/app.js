@@ -221,21 +221,21 @@
 		/////////////////////////////////////
 		// FUNCTION: BUILD CART
 		/////////////////////////////////////
+		// data: JSON.stringify({
+		// 	"name": name,
+		// 	"image": "imanimage",
+		// 	"description": "descyo!"
+		// })
+
 		function createCart(name) {
 			const settings = {
 				method: 'POST',
 				url: `https://foodcarts2017.herokuapp.com/api/foodcart`,
 				crossDomain: true,
 				dataType: 'json',
-				contentType: 'application/json',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
-				// data: JSON.stringify({
-				// 	"name": name,
-				// 	"image": "imanimage",
-				// 	"description": "descyo!"
-				// })
 				data: {
 					"name": name,
 					"image": "imanimage",
