@@ -39,7 +39,7 @@
 					return selectItems;
 				};
 
-				this.foodcart_id = foodcartObj.items[0].foodcart_id;
+				this.foodcart_id = foodcartObj.id; // items[0].foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
