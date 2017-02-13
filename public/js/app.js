@@ -30,12 +30,22 @@
 			// our keys  ||| object keys we are pulling from
 			constructor(foodcartObj) {
 				// this.id = foodcartObj.id; // NEEDS UPDATE // check real object name
+				let selectItems = [];
+				const selectItemsLoop = function() { // loop through foodItems
+					for (let i = 0; i < foodcartObj.items.length; i++) {
+
+						selectItems.push(foodcartObj.items[i].food_name);
+					}
+					return selectItems;
+				};
+
 				this.foodcart_id = foodcartObj.items[0].foodcart_id;
 				this.name = foodcartObj.name;
 				this.description = foodcartObj.description;
 				this.image = foodcartObj.image;
 				this.average_rating = foodcartObj.average_rating;
-				this.food_name = foodcartObj.items.food_name;
+				this.food_name = selectItemsLoop();
+				// this.food_name = foodcartObj.items[0].food_name; //old
 				this.vegetarian = foodcartObj.items.vegetarian;
 				console.log('CLASS : this --> ', this);
 				this.build();
@@ -235,6 +245,7 @@
 					"review": review
 				})
 			};
+			console.log('response0 ', response[0]);
 			$.ajax(settings).then((response) => {
 				console.log('success!');
 			}).catch((error) => {

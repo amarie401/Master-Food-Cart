@@ -326,8 +326,9 @@ h3 {
     height: 200px;
     width: 30%; }
 
-.fc-food-items ul {
-  padding: 15px; }
+.fc-selectItems {
+  color: #333;
+  font-size: 22px; }
 
 .fc-footer-containers {
   display: flex;
