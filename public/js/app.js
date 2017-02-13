@@ -77,7 +77,7 @@
 				}
 			}).then((response) => {
 
-				let topResults = response.splice(0, 1);
+				let topResults = response.splice(0, 5);
 				for (let i = 0; i < topResults.length; i++) {
 					new FoodcartDetails(topResults[i]);
 				}
@@ -213,7 +213,7 @@
 			$.ajax(settings).then((response) => {
 				console.log('success!');
 			}).catch((error) => {
-				console.log('error in ajax ' + error);
+				console.log('error in ajax ', error);
 			});
 		}
 
