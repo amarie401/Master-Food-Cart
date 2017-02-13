@@ -231,11 +231,16 @@
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
-				data: JSON.stringify({
+				// data: JSON.stringify({
+				// 	"name": name,
+				// 	"image": "imanimage",
+				// 	"description": "descyo!"
+				// })
+				data: {
 					"name": name,
 					"image": "imanimage",
 					"description": "descyo!"
-				})
+				}
 			};
 			console.log(name);
 			$.ajax(settings).then((response) => {
