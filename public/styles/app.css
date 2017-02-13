@@ -330,7 +330,7 @@ h3 {
   color: #333;
   font-size: 22px; }
 
-.fc-footer-containers {
+.fc-footer-container {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;

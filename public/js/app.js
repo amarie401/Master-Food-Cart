@@ -85,8 +85,9 @@
 				header: {
 					"content-type": "application/json;charset=utf-8"
 				}
-			}).then((response) => {
 
+			}).then((response) => {
+				console.log(response[0]);
 				let topResults = response.splice(0, 5);
 				for (let i = 0; i < topResults.length; i++) {
 					new FoodcartDetails(topResults[i]);
@@ -143,19 +144,19 @@
 
 			///////////// ON CLICK : SEE RATING BUTTON  /////////////
 			$('.template-container').on('click', '.btn-see-rate', function() {
-				$('.rr-container').toggleClass('is-hidden'); // add fadeIn later
+				$(this).parents('.mega-container').find('.rr-container').toggleClass('is-hidden');
 			});
 
 			///////////// ON CLICK : MAKE RATING BUTTON  /////////////
 			$('.template-container').on('click', '.btn-make-rate', function() {
-				// console.log('in');
-
-				$('.gr-container').toggleClass('is-hidden'); // add fadeIn later
+				$(this).parents('.mega-container').find('.gr-container').toggleClass('is-hidden');
 			});
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
 			$('.template-container').on('click', '.fc-close', function() {
-				$(this).parents('.fc-main-container', '.gr-container', '.rr-container').toggleClass('is-hidden');
-				// $('.gr-container', '.rr-container').toggleClass('is-hidden');
+				$(this).parents('.mega-container').find('.fc-main-container').toggleClass('is-hidden');
+				$(this).parents('.mega-container').find('.gr-container').toggleClass('is-hidden');
+				$(this).parents('.mega-container').find('.rr-container').toggleClass('is-hidden');
+				// $(this).parents('.fc-main-container', '.gr-container', '.rr-container').toggleClass('is-hidden');
 			});
 			$('.template-container').on('click', '.gr-close', function() {
 				$(this).parents('.gr-container').toggleClass('is-hidden');
@@ -226,13 +227,14 @@
 				url: `https://foodcarts2017.herokuapp.com/api/foodcart`,
 				crossDomain: true,
 				dataType: 'json',
+				contentType: 'application/json',
 				headers: {
 					"content-type": "application/json;charset=utf-8"
 				},
 				data: JSON.stringify({
 					"name": name,
-					"image": 'imanimage',
-					"description": 'descyo!'
+					"image": "imanimage",
+					"description": "descyo!"
 				})
 			};
 			console.log(name);
