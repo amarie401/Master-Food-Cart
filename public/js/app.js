@@ -102,6 +102,19 @@
 		function buildAFoodCart() {
 			//TBD
 		}
+		/////////////////////////////////////
+		// FUNCTION: LOOP TEMPLATE RESULTS/COUNTER
+		/////////////////////////////////////
+		function slackingIsNowAVerb() {
+			let templateCounter = [];
+
+			$('div .fc-main-container').each(function(index) {
+				templateCounter.push(index);
+				console.log('tmp indx --> ', index);
+				return templateCounter;
+			});
+		}
+
 
 		/////////////////////////////////////
 		// FUNCTION: CLEAR PAGE OF SEARCH
@@ -119,23 +132,24 @@
 			///////////// ON CLICK : GET INPUT  /////////////
 			searchForm.addEventListener('submit', () => {
 				event.preventDefault();
-				clearContent();
+				// clearContent();
 				const searchValue = event.target[0].value; //grab value from input
 				console.log('input --> ', searchValue);
 				APIRequest(searchValue); // pass value to APIRequest()
-				$('.veggie').removeClass('is-visibility-hidden');
+				// $('.veggie').removeClass('is-visibility-hidden');
+
 				searchForm.reset(); // clear form
 			});
 
 			///////////// ON CLICK : SEE RATING BUTTON  /////////////
 			$('.template-container').on('click', '.btn-see-rate', function() {
-				// console.log('in');
 				$('.rr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 
 			///////////// ON CLICK : MAKE RATING BUTTON  /////////////
 			$('.template-container').on('click', '.btn-make-rate', function() {
 				// console.log('in');
+
 				$('.gr-container').toggleClass('is-hidden'); // add fadeIn later
 			});
 			///////////// ON CLICK : CLOSE TMPLATE CONTAINER  /////////////
@@ -154,6 +168,8 @@
 			///////////// ON CLICK : SEE BUILD CONTAINER /////////////
 			foodcartForm.addEventListener('submit', () => {
 				event.preventDefault();
+				slackingIsNowAVerb(); // test function <----------------------
+
 				const buildCart = event.target[0].value;
 				console.log('buildcart ', buildCart);
 				createCart(buildCart);
@@ -258,6 +274,7 @@
 		/////////////////////////////////////
 		function init() {
 			bindEvents();
+
 		} // end of init
 
 		return {
